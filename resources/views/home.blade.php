@@ -23,12 +23,14 @@
                                     
                                    <select class="form-control" name="recipient_id">
                                        
-                                       <option value="">Selecciona el usuario</option>
-                                       <<?php foreach ($users as $user ): ?>
+                                       <option value="0">Selecciona el usuario</option>
+                                       <option value="99999999">Enviar a todos</option>
+                                       <?php foreach ($users as $user ): ?>
 
                                         <option value="{{$user->id }}">{{$user->name}} </option>
                                            
                                        <?php endforeach ?>
+
                                    </select> 
 
                                 </div>
@@ -36,6 +38,11 @@
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
                                 </div>
+                                <div class="form-group">
+                                <a href="#" class="btn btn-primary btn-block">Generar Correo</a>
+                                </div>
+
+
                                 <div class="form-group">
                                 <button class="btn btn-primary btn-block" >Enviar</button>
                                 </div>
