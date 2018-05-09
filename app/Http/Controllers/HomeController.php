@@ -41,33 +41,6 @@ class HomeController extends Controller
         //Validacion-Falta
 
 
-
-        if ($request->recipient_id==99999999) {
-           
-        $usuarios = User::where('id','!=',auth()->id())->get();
-
-           foreach ($usuarios as $usuario) {
-               
-
-            Message::create([
-
-
-            'sender_id' => auth()->id(),
-            'recipient_id' => $usuario->id,
-            'body' => $request->body,
-            
-            ]);
-
-
-           }
-           return back();
-        }
-
-        else{
-
-
-
-
         Message::create([
 
 
@@ -80,6 +53,6 @@ class HomeController extends Controller
 
         return back()->with('flash','Tu mensaje fue enviado');
         //return $request->all();
-        }
+        
     }
 }

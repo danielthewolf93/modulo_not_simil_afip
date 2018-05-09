@@ -38,8 +38,14 @@
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
                                 </div>
+
                                 <div class="form-group">
                                 <a href="#" class="btn btn-primary btn-block">Generar Correo</a>
+                                </div>
+                                
+                                <label for="adjunto">Adjuntar</label>
+                                <div class="form-group">
+                                <input type="file" name="adjunto" class="form-control"/>
                                 </div>
 
 
