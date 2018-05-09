@@ -34,6 +34,11 @@
                                    </select> 
 
                                 </div>
+                
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="busqueda" placeholder="Buscar usuario">
+                                </div>
+
 
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
