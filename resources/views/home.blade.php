@@ -1,0 +1,53 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Enviar mensaje</div>
+
+                <form method="POST" action="{{ route('messages.store')}}">
+                    {{ csrf_field() }}
+                            <div class="panel-body">
+
+
+                                @if (session('status'))
+                                    <div class="alert alert-success">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
+
+
+                                <div class="form-group">
+                                    
+                                   <select class="form-control" name="recipient_id">
+                                       
+                                       <option value="">Selecciona el usuario</option>
+                                       <<?php foreach ($users as $user ): ?>
+
+                                        <option value="{{$user->id }}">{{$user->name}} </option>
+                                           
+                                       <?php endforeach ?>
+                                   </select> 
+
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
+                                </div>
+                                <div class="form-group">
+                                <button class="btn btn-primary btn-block" >Enviar</button>
+                                </div>
+
+
+                            </div>
+
+                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@endsection
