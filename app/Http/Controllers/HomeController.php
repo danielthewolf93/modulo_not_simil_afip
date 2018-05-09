@@ -33,6 +33,17 @@ class HomeController extends Controller
         return view('home',compact('users'));
     }
 
+//funcion
+//para traer usuarios de la tabla de usuarios rentas aplicativ
+//pero recordar que esto ya traemos de las variables de usuario que viene de la aplicacion principal
+    public function index2()
+    {
+
+        $users2 = User::where()->get();
+
+        return view('home2',compact('users2'));
+    }
+
 
     public function store(Request $request)
 
