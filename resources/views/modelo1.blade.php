@@ -7,5 +7,8 @@
     
      
      <a href="#" class="btn btn-primary ">Guardar</a>
-      </div>
+		
+	 <a href="{{ route('home') }}" class="btn btn-primary ">Cancelar</a>
+
+     </div>
 	@endsection
