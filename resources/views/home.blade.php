@@ -20,7 +20,7 @@
 
 
                                 <div class="form-group">
-                                    
+                                   
                                    <select class="form-control" name="recipient_id">
                                        
                                        <option value="0">Selecciona el usuario</option>
@@ -53,7 +53,9 @@
                                 <div class="form-group">
                                 <button class="btn btn-primary " class="form-control" >Enviar</button>
                                 </div>
-                                
+
+                                 <fieldset >Seccion 2
+
                                 <div class="form-group" >
                                     <select class="form-control" name="modeloform">
                                     <option value="0">Seleccionar Modelo</option> 
@@ -67,7 +69,7 @@
                                 <a href="{{ route('model1') }}" class="btn btn-primary ">Generar Modelo</a>
                                 </div>
 
-
+                                </fieldset>
                             </div>
 
                  </form>

@@ -70,7 +70,7 @@ class HomeController extends Controller
 
 
 
-    public function elegirmodel(modelo)
+    public function elegirmodel()
     {
 
         if ($modelo==0) {
