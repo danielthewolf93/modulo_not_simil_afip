@@ -54,5 +54,5 @@ return view('modelo3');
 
 //Route::get('formulario/$modelo','HomeController@elegirmodel')->name('formulario');
 
-Route::get('formulario','StoreController@index');->name('formulario');
+Route::get('formulario','StoreController@index')->name('formulario');
 
