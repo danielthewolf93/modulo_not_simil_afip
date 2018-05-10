@@ -1,7 +1,4 @@
-@extends('layouts.app')
 
-
-@section('content')
 
  								<div class="form-group" >
 	                                    <select class="form-control" name="modeloform">
@@ -15,4 +12,4 @@
                                 <div class="form-group">
                                 <a href="{{ route('model1') }}" class="btn btn-primary ">Generar Modelo</a>
                                 </div>
-@endsection
+
