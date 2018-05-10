@@ -22,10 +22,11 @@
 	                                    </select>
                                 	 </div>
 									
+									<label class="form-group">Cuit</label>
 									<div class="form-group">
 										<input type="text" name="cuit" placeholder="cuit_contribuyente">
 									</div>
-
+									<label class="form-group">Matricula</label>
 									<div class="form-group">
 										<select>
 											<option value="0">Seleccionar</option>
@@ -35,7 +36,7 @@
 										</select>
 									</div>
 
-
+									<label class="form-group">Fecha</label>
                                 	 <div class="form-group">
                                 	 	<input type="date" name="fecha_hoy" >
 									</div>
