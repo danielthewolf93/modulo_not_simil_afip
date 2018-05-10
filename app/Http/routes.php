@@ -56,3 +56,4 @@ return view('modelo3');
 
 Route::get('formulario','StoreController@index')->name('formulario');
 
+Route::get('/intim','IntimController@index')->name('intim');

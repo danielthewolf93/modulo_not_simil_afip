@@ -58,8 +58,10 @@
                     @else
 
                          <li><a href="home">Enviar Mensaje</a></li>
+                         <li><a href="{{ route('intim')}}">Enviar Intimaci&oacute;n</a></li>
                             <li><a href="#">Notificaciones<span class="badge">1</span></a></li>
                         <li class="dropdown">
+
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 
                                 {{ Auth::user()->name }} <span class="caret"></span>
