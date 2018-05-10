@@ -50,3 +50,7 @@ return view('modelo3');
 
 
 }]);
+
+
+Route::get('formulario/$modelo','HomeController@elegirmodel')->name('formulario');
+

@@ -52,6 +52,7 @@ class HomeController extends Controller
         //Validacion-Falta
 
 
+
         Message::create([
 
 
@@ -69,7 +70,7 @@ class HomeController extends Controller
 
 
 
-    public function elegirmodel( )
+    public function elegirmodel(modelo)
     {
 
         if ($modelo==0) {
@@ -103,5 +104,6 @@ class HomeController extends Controller
 
 
     }
+
 
 }
