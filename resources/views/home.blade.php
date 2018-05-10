@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Enviar mensaje</div>
 
-                <form method="POST" action="{{ route('messages.store')}}" >
+                <form method="POST" action="{{ route('messages.store')}}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                             <div class="panel-body">
 
