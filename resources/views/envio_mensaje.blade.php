@@ -6,7 +6,7 @@
 <body>
 
 
-	             <form method="POST" action="{{ route('home')}}">
+	             <form method="POST" action="{{ route('home')}}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                             <div class="panel-body">
 
