@@ -66,4 +66,42 @@ class HomeController extends Controller
         //return $request->all();
         
     }
+
+
+
+    public function elegirmodel( )
+    {
+
+        if ($modelo==0) {
+
+            //controlo y devuelvo para que seleccione algun tipo y notifico del error
+            //
+        }
+
+        if ($modelo==1) {
+
+
+           return view('modelo1',compact('cuitcont','matricula'));
+           
+        }
+        
+        if ($modelo==2) {
+
+
+           return view('modelo2',compact('cuitcont','matricula'));
+       
+        }
+
+        if ($modelo==3) {
+
+
+           return view('modelo3',compact('cuitcont','matricula'));
+        
+        }
+       
+
+
+
+    }
+
 }

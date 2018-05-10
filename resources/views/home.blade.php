@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Enviar mensaje</div>
 
-                <form method="POST" action="{{ route('messages.store')}}">
+                <form method="POST" action="{{ route('messages.store')}}" >
                     {{ csrf_field() }}
                             <div class="panel-body">
 
@@ -30,23 +30,19 @@
                                         <option value="{{$user->id }}">{{$user->name}} </option>
                                            
                                        <?php endforeach ?>
-
+                                    
                                    </select> 
 
                                 </div>
                 
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="busqueda" placeholder="Buscar usuario">
-                                </div>
-
+                               
+                                
 
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
                                 </div>
 
-                                <div class="form-group">
-                                <a href="#" class="btn btn-primary btn-block">Generar Correo</a>
-                                </div>
+                                
                                 
                                 <label for="adjunto">Adjuntar</label>
                                 <div class="form-group">
@@ -55,7 +51,20 @@
 
 
                                 <div class="form-group">
-                                <button class="btn btn-primary btn-block" >Enviar</button>
+                                <button class="btn btn-primary " class="form-control" >Enviar</button>
+                                </div>
+                                
+                                <div class="form-group" >
+                                    <select class="form-control" name="modeloform">
+                                    <option value="0">Seleccionar Modelo</option> 
+                                    <option value="1">Modelo 1</option>
+                                    <option value="2">Modelo 2</option>    
+                                    <option value="3">Modelo 3</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                <a href="{{ route('model1') }}" class="btn btn-primary ">Generar Modelo</a>
                                 </div>
 
 

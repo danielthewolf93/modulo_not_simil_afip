@@ -21,3 +21,32 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/messages', 'HomeController@store')->name('messages.store');
+
+
+
+Route::get('/modelo1',['as'=>'model1',function(){
+
+
+return view('modelo1');
+
+
+
+}]);
+
+Route::get('/modelo2',['as'=>'model2',function(){
+
+
+return view('modelo2');
+
+
+
+}]);
+
+Route::get('/modelo3',['as'=>'model3',function(){
+
+
+return view('modelo3');
+
+
+
+}]);
