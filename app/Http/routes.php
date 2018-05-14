@@ -53,7 +53,30 @@ return view('modelo3');
 
 
 //Route::get('formulario/$modelo','HomeController@elegirmodel')->name('formulario');
-
-Route::get('formulario','StoreController@index')->name('formulario');
+/*
+Route::get('formulario','StoreController@index')->name('formulario');*/
 
 Route::get('/intim','IntimController@index')->name('intim');
+
+//Almacenar los documentos 
+Route::get('formulario','StorageController@index');
+
+//ruta que procesa los datos
+
+Route::post('storage/create', 'StorageController@save')->name('storage');
+
+
+//Para ver el archivo
+
+Route::get('storage/{archivo}', function ($archivo) {
+     $public_path = public_path();
+     $url = $public_path.'/storage/'.$archivo;
+     //verificamos si el archivo existe y lo retornamos
+     if (Storage::exists($archivo))
+     {
+       return response()->download($url);
+     }
+     //si no se encuentra lanzamos un error 404.
+     abort(404);
+
+});
