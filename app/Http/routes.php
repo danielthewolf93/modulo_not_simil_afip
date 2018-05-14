@@ -58,12 +58,15 @@ Route::get('formulario','StoreController@index')->name('formulario');*/
 
 Route::get('/intim','IntimController@index')->name('intim');
 
+
 //Almacenar los documentos 
-Route::get('formulario','StorageController@index');
+Route::get('/formulario','StoreController@index')->name('formu');
+
+
 
 //ruta que procesa los datos
 
-Route::post('storage/create', 'StorageController@save')->name('storage');
+Route::post('/prueba3/public/storage/create', 'StoreController@guardar')->name('proces');
 
 
 //Para ver el archivo
@@ -80,3 +83,6 @@ Route::get('storage/{archivo}', function ($archivo) {
      abort(404);
 
 });
+
+//Route::get('/prueba3/public/storage/create','StoreController@mostrar');
+

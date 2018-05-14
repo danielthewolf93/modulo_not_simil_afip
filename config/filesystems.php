@@ -49,7 +49,7 @@ return [
             'root' => public_path().'/storage',
         ],
 
-        'public' => [
+       'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'visibility' => 'public',
