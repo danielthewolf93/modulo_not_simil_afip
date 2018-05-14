@@ -69,8 +69,17 @@ Route::get('/formulario','StoreController@index')->name('formu');
 Route::post('/prueba3/public/storage/create', 'StoreController@guardar')->name('proces');
 
 
-//Para ver el archivo
 
+//
+//con esto borro los pdf.
+//Storage::delete('file.jpg');
+//Storage::delete(['file1.jpg', 'file2.jpg']);
+//
+//
+
+
+//Para ver el archivo
+//tambien lo descarga
 Route::get('storage/{archivo}', function ($archivo) {
      $public_path = public_path();
      $url = $public_path.'/storage/'.$archivo;
