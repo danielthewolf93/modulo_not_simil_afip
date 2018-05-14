@@ -31,9 +31,13 @@ class StoreController extends Controller
 		$nombre = $file->getClientOriginalName();
 
 		\Storage::disk('local')->put($nombre,\File::get($file));
+		//para ver direcc de la ruta donde se almacena
+		$public_path = public_path();
 
+		$nom=$public_path.'/storage/';
 
-		return "archivo guardado";
+		return "archivo guardado en ".$nom;
+
 	}
 
 }
