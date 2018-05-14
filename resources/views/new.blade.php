@@ -15,6 +15,12 @@
             <form method="POST" action="http://diamond-chaos.codio.io:3000/tuto/public/storage/create" accept-charset="UTF-8" enctype="multipart/form-data">
 
 -->
+            
+          
+
+
+
+
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             
@@ -24,6 +30,8 @@
                 <input type="file" class="form-control" name="file" >
               </div>
             </div>
+            
+            <a href="{{ route('visualcon') }}" class="button btn-block">Enviar a Visualiz Contrib</a>
 
             <div class="form-group">
               <div class="col-md-6 col-md-offset-4">
