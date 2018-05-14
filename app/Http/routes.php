@@ -80,6 +80,7 @@ Route::post('/prueba3/public/storage/create', 'StoreController@guardar')->name('
 
 //Para ver el archivo
 //tambien lo descarga
+//
 Route::get('storage/{archivo}', function ($archivo) {
      $public_path = public_path();
      $url = $public_path.'/storage/'.$archivo;
@@ -87,6 +88,7 @@ Route::get('storage/{archivo}', function ($archivo) {
      if (Storage::exists($archivo))
      {
        return response()->download($url);
+
      }
      //si no se encuentra lanzamos un error 404.
      abort(404);
@@ -95,3 +97,6 @@ Route::get('storage/{archivo}', function ($archivo) {
 
 //Route::get('/prueba3/public/storage/create','StoreController@mostrar');
 
+
+
+Route::get('/visualizacioncont','VisualisConController@index')->name('visualcon');
