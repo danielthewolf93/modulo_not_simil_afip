@@ -95,6 +95,8 @@ Route::get('storage/{archivo}', function ($archivo) {
 
 });
 
+Route::get('/eliminar','StoreController@borrar')->name('borrar_arch');
+
 //Route::get('/prueba3/public/storage/create','StoreController@mostrar');
 
 

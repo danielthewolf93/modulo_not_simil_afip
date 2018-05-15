@@ -40,4 +40,15 @@ class StoreController extends Controller
 
 	}
 
+
+
+	public function borrar()
+	{
+		$archivo='icono.ico';
+
+		\Storage::delete($archivo);
+
+		return "archivo borrado ".$archivo;
+	}
+
 }
