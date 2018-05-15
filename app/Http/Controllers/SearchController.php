@@ -12,6 +12,17 @@ class SearchController extends Controller
     
 
 
+
+public function index() {
+	//retorna todos los registros de rm_padron6 puedo utilizarlo para mostrar todo el movimiento de un contribuyente
+	//
+	//Puede servir para ver la cantidad de mensajes que envio un empleado en un dia , mes, etc.
+  $posts = rm_padron6::search(Input::get('search'))->orderBy('pad_cuit_index', 'pad_nomenclatura');
+  
+  return view('posts', ['posts' => $posts]);
+}
+
+
    
 
 /*
@@ -35,7 +46,7 @@ class SearchController extends Controller
 
 		    }
 */
-		    
+
 
 public function autocomplete()
 {
