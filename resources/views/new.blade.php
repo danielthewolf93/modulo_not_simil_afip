@@ -39,6 +39,20 @@
               </div>
             </div>
           </form>
+
+     
+        <div class="form-group">
+        <label class="col-md-4 control-label">Buscar Contribuyente</label>
+
+        <div class="col-md-6">
+
+       <input type="text" name="busqueda" class="form-control" placeholder="Buscar..."> 
+
+        </div>
+
+        </div>
+
+
         </div>
       </div>
     </div>

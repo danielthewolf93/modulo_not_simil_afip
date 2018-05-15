@@ -100,3 +100,7 @@ Route::get('storage/{archivo}', function ($archivo) {
 
 
 Route::get('/visualizacioncont','VisualisConController@index')->name('visualcon');
+
+/*
+Route::get('/intim','IntimController@buscar')->name('intim2');
+*/
