@@ -44,6 +44,9 @@ class StoreController extends Controller
 
 	public function borrar()
 	{	
+		//
+		//solo necesitamos el nombre para borrar en el directorio.
+		//
 		$archivo='icono.ico';
 
 		if(is_file($archivo))
