@@ -22,9 +22,6 @@ public function index() {
   return view('posts', ['posts' => $posts]);
 }
 
-
-   
-
 /*
 
     public function autocomplete(Request $request)
