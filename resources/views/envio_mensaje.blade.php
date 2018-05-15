@@ -2,6 +2,20 @@
 <html>
 <head>
 	<title>Enviar mensaje</title>
+
+<script type="text/javascript">
+  $(function()
+{
+     $( "#q" ).autocomplete({
+      source: "search/autocomplete",
+      minLength: 3,
+      select: function(event, ui) {
+        $('#q').val(ui.item.value);
+      }
+    });
+});
+</script>
+
 </head>
 <body>
 

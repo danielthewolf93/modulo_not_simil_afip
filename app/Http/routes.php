@@ -104,3 +104,18 @@ Route::get('/visualizacioncont','VisualisConController@index')->name('visualcon'
 /*
 Route::get('/intim','IntimController@buscar')->name('intim2');
 */
+
+/*
+Route::get('/visualizacioncont','VisualisConController@busqueda')->name('busqueda');
+
+*/
+
+Route::get('search/autocomplete', 'SearchController@autocomplete')->name('search-autocomplete');
+
+
+
+
+
+
+
+
