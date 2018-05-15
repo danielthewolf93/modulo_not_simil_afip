@@ -43,12 +43,22 @@ class StoreController extends Controller
 
 
 	public function borrar()
-	{
+	{	
 		$archivo='icono.ico';
 
-		\Storage::delete($archivo);
+		if(is_file($archivo))
+		{
+		    // 1. possibility
+		    \Storage::delete($archivo);
+		    // 2. possibility
+		    unlink(storage_path('app/folder/'.$archivo));
+		}
+		else
+		{
+		    echo "El archivo no existe.";
+		}
 
-		return "archivo borrado ".$archivo;
+		
 	}
 
 }
