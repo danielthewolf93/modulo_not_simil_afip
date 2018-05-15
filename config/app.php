@@ -123,6 +123,7 @@ return [
 
     'providers' => [
 
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -147,6 +148,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
+        Sofa\Eloquence\ServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -204,4 +208,13 @@ return [
 
     ],
 
+
+
+    
+
+
+
+
 ];
+
+
