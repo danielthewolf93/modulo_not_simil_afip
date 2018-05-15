@@ -31,11 +31,15 @@
               </div>
             </div>
             
-            <a href="{{ route('visualcon') }}" class="button btn-block">Enviar a Visualiz Contrib</a>
+          
+
+            
+           
 
             <div class="form-group">
               <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-primary">Enviar</button>
+                <a href="{{ route('borrar_arch') }}" class="btn btn-primary">Borrar</a>
               </div>
             </div>
           </form>
@@ -52,7 +56,10 @@
               </div>
 
         </div>
-        
+
+         <a href="{{ route('visualcon') }}" class="btn btn-primary">Enviar a Visualiz Contrib</a>
+
+
         </button>
         </form>
         <input type="hidden" name="source_id" class="source_id" id="id" placeholder="22">
