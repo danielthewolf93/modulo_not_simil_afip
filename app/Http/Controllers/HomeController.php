@@ -49,9 +49,12 @@ class HomeController extends Controller
 
     {
 
-        //Validacion-Falta
+        //Validacion-parte-servidor-hacer-en-todas
 
-
+          /*
+          'body' => 'required|max:255',
+          'recipient_id' => 'required',
+           */
 
         Message::create([
 
