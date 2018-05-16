@@ -95,7 +95,7 @@ Route::get('storage/{archivo}', function ($archivo) {
 
 });
 
-Route::get('','StoreController@borrar')->name('borrar_arch');
+Route::get('/borrado','StoreController@borrar')->name('borrar_arch');
 
 //Route::get('/prueba3/public/storage/create','StoreController@mostrar');
 
@@ -113,6 +113,7 @@ Route::get('/visualizacioncont','VisualisConController@busqueda')->name('busqued
 */
 
 Route::get('search/autocomplete', 'SearchController@autocomplete')->name('search-autocomplete');
+
 
 
 

@@ -106,4 +106,24 @@ class HomeController extends Controller
     }
 
 
+//
+//validacion  en el envio de datos /validacion por parte del servidor.
+    public function validaciones(Request $request)
+    {
+
+        $this->validate($request,[
+
+        'title' => 'required|unique|max:255',
+        'body' => 'required',
+
+        ]);
+        
+
+
+    }
+
+
+
+   
+
 }

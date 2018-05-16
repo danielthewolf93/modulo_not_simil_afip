@@ -3,24 +3,15 @@
 <head>
 	<title>Enviar mensaje</title>
 
-<script type="text/javascript">
-  $(function()
-{
-     $( "#q" ).autocomplete({
-      source: "search/autocomplete",
-      minLength: 3,
-      select: function(event, ui) {
-        $('#q').val(ui.item.value);
-      }
-    });
-});
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+
 
 </head>
 <body>
 
 
-	             <form method="POST" action="{{ route('home')}}" enctype="multipart/form-data">
+	             <form method="POST" action="{{ route('home')}}" class="form-control" enctype="multipart/form-data" onsubmit="return validacions()">
                     {{ csrf_field() }}
                             <div class="panel-body">
 
