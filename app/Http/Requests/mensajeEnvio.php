@@ -27,7 +27,7 @@ class mensajeEnvio extends Request
 
                 'recipient_id' => 'required',
                 'body' => 'required|min:10|max:250',
-            //
+            
         ];
     }
 }
