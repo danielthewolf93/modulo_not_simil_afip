@@ -25,9 +25,8 @@ class mensajeEnvio extends Request
     {
         return [
 
-                'email' => ['required', 'email', 'max:255', 'unique:users'],
-                'name' => ['required','text','max:80', ''],
-                'mensaje' => ['required','text','min:10','max:250']
+                'recipient_id' => 'required',
+                'body' => 'required|min:10|max:250',
             //
         ];
     }
