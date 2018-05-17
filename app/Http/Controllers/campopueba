@@ -1,0 +1,28 @@
+$
+
+
+
+
+
+
+
+
+
+
+
+progress = $this->getHelperSet()->get('progress');
+
+$progress->start($this->getOutput(), 5);
+
+$i = 0;
+
+while ($i++ < 5) {
+
+    sleep(1);
+
+    $progress->advance();
+
+}
+
+
+$progress->finish();

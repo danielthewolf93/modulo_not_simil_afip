@@ -12,8 +12,13 @@ class Notificaciones extends Request
      * @return bool
      */
     public function authorize()
-    {
+    {   
+
+        
+
         return false;
+
+
     }
 
     /**
@@ -24,7 +29,18 @@ class Notificaciones extends Request
     public function rules()
     {
         return [
-            //
+
+            //reglas de validaciones desde el servidor.
+            // 'body'=> 'required|max:25       //             'recipient_id' => 'required',
+
+           
+            'recipient_id' => 'required',
+            'body'=> 'required|max:25'
+
+            
+
+
+            
         ];
     }
 }

@@ -53,11 +53,12 @@ class HomeController extends Controller
 
           /*
           'body' => 'required|max:255',
-          'recipient_id' => 'required',
-           */
+          'recipient_id' => 'required',    
 
-          'body' => 'required|max:255',
-          'reciìent_id' => 'required',
+
+
+
+           */
 
         Message::create([
 
@@ -73,7 +74,6 @@ class HomeController extends Controller
         //return $request->all();
         
     }
-
 
 
     public function elegirmodel()
@@ -105,8 +105,8 @@ class HomeController extends Controller
            return view('modelo3',compact('cuitcont','matricula'));
         
         }
-       
 
+        
 
 
     }
@@ -114,6 +114,8 @@ class HomeController extends Controller
 
 //
 //validacion  en el envio de datos /validacion por parte del servidor.
+    
+/*
     public function validaciones(Request $request)
     {
 
@@ -126,7 +128,7 @@ class HomeController extends Controller
         
 
 
-    }
+    }  */
 
 
 
