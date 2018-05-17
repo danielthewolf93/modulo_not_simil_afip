@@ -119,6 +119,10 @@ Route::get('search/autocomplete', 'SearchController@autocomplete')->name('search
 
 
 
+Route::get('/form', 'FormController@index');
+
+Route::post('/form', 'FormController@store');
+
 
 
 

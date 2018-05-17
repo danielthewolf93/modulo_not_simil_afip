@@ -47,18 +47,6 @@ class HomeController extends Controller
 
 
     public function store(Request $request)
-{
-    $rules = [
-        'student' => 'required|max:20',
-        'score' => 'required|numeric|min:1|max:10',
-    ];
- 
-    $this->validate($request, $rules);
-
-
-
-
-    public function store(Request $request)
 
     {
 
@@ -68,16 +56,24 @@ class HomeController extends Controller
           'recipient_id' => 'required',    
          */
         
+//Reglas de control para envio de mensaje
 
         $rules = [
         'recipient_id' => 'required',
         'body' => 'required|min:10|max:150',
          ];
         
-        
 
-        $this->validate($request, $rules);
+//mensajes personalizados para controles
 
+        $messages = [
+        'body.required' => 'Agrega texto al campo.',
+        'body.max' =>'Texto mayor al permitido :max caracteres.',
+        'recipient_id.required' => 'Agrega el destinatario',
+        'body_min.' => 'Agrega mayor longitud de texto.'
+];
+ 
+$this->validate($request, $rules, $messages);
           
         Message::create([
 
