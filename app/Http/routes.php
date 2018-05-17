@@ -76,12 +76,6 @@ Route::post('/prueba3/public/storage/create', 'StoreController@guardar')->name('
 //Storage::delete(['file1.jpg', 'file2.jpg']);
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 //Para ver el archivo
@@ -131,5 +125,7 @@ Route::get('/form', 'FormController@index')->name('formu') ;
 Route::post('/form', 'FormController@store')->name('formus');
 
 
+
+//Route::any('/formulario/contribuyente','ForController@contrib')->name('formularioss');
 
 

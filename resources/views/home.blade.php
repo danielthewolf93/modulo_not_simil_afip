@@ -12,13 +12,11 @@
 
                             <div class="panel-body">
 
-
                                 @if (session('status'))
                                     <div class="alert alert-success">
                                         {{ session('status') }}
                                     </div>
                                 @endif
-
 
                                 <div class="form-group">
                                    
@@ -36,9 +34,6 @@
 
                                 </div>
                 
-                               
-                                
-
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
                                 </div>
@@ -55,10 +50,6 @@
                                 <button class="btn btn-primary " class="form-control" >Enviar</button>
                                 </div>
 
-                                
-                               
-
-                            
                             </div>
 
                  </form>
