@@ -45,21 +45,40 @@ class HomeController extends Controller
     }
 
 
+
+    public function store(Request $request)
+{
+    $rules = [
+        'student' => 'required|max:20',
+        'score' => 'required|numeric|min:1|max:10',
+    ];
+ 
+    $this->validate($request, $rules);
+
+
+
+
     public function store(Request $request)
 
     {
 
         //Validacion-parte-servidor-hacer-en-todas
-
-          /*
+        /*
           'body' => 'required|max:255',
           'recipient_id' => 'required',    
+         */
+        
 
+        $rules = [
+        'recipient_id' => 'required',
+        'body' => 'required|min:10|max:150',
+         ];
+        
+        
 
+        $this->validate($request, $rules);
 
-
-           */
-
+          
         Message::create([
 
 
@@ -74,6 +93,7 @@ class HomeController extends Controller
         //return $request->all();
         
     }
+
 
 
     public function elegirmodel()
@@ -106,7 +126,7 @@ class HomeController extends Controller
         
         }
 
-        
+
 
 
     }
