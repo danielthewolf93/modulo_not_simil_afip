@@ -56,6 +56,9 @@ class HomeController extends Controller
           'recipient_id' => 'required',
            */
 
+          'body' => 'required|max:255',
+          'reciìent_id' => 'required',
+
         Message::create([
 
 
