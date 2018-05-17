@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://localhost:8000/home -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Inicio</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="./Inicio_files/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Inicio_files/css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./Inicio_files/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+
+    
+    <style>
+        body {
+            font-family: 'Lato';
+        }
+
+        .fa-btn {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body id="app-layout">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand " href="http://localhost:8000/">Inicio
+                  
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+               
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    
+                         <li><a href="http://localhost:8000/home">Enviar Mensaje</a></li>
+                         <li><a href="http://localhost:8000/intim">Enviar Intimación</a></li>
+                            <li><a href="http://localhost:8000/home#">Notificaciones<span class="badge">1</span></a></li>
+                            <li><a href="http://localhost:8000/formulario">Enviar documento</a></li>
+                        <li class="dropdown">
+
+                            <a href="http://localhost:8000/home#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+
+                                daniel blanco <span class="caret"></span>
+                            </a>
+
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="http://localhost:8000/logout"><i class="fa fa-btn fa-sign-out"></i>Salir</a></li>
+                            </ul>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </nav>
+        
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Enviar mensaje</div>
+
+                <form method="POST" action="http://localhost:8000/messages" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" value="soHXT46arRHpTnaD4ovCrxkwnvJJLGdCrzy92AXE">
+
+                            <div class="panel-body">
+
+
+                                
+
+                                <div class="form-group">
+                                   
+                                   <select class="form-control" name="recipient_id">
+                                       
+                                       <option value="0">Selecciona el usuario</option>
+                                       <option value="99999999">Enviar a todos</option>
+                                       
+                                        <option value="2">sergio white </option>
+                                           
+                                       
+                                        <option value="3">blanco </option>
+                                           
+                                                                           
+                                   </select> 
+
+                                </div>
+                
+                               
+                                
+
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
+                                </div>
+
+                                
+                                
+                                <label for="adjunto">Adjuntar</label>
+                                <div class="form-group">
+                                <input type="file" name="adjunto" class="form-control">
+                                </div>
+
+
+                                <div class="form-group">
+                                <button class="btn btn-primary ">Enviar</button>
+                                </div>
+
+                                
+                               
+
+                            
+                            </div>
+
+                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- JavaScripts -->
+    <script src="./Inicio_files/jquery.min.js.descarga" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="./Inicio_files/bootstrap.min.js.descarga" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!--fijar control en javascript.
+
+    -->
+
+    <script src="./Inicio_files/validateforms.js.descarga"></script>
+   
+    
+    
+
+
+</body></html>

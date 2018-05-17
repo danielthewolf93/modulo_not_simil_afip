@@ -1,0 +1,6 @@
+
+function validacions() {
+	
+
+	return false;
+}
