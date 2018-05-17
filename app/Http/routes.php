@@ -60,7 +60,7 @@ Route::get('/intim','IntimController@index')->name('intim');
 
 
 //Almacenar los documentos 
-Route::get('/formulario','StoreController@index')->name('formu');
+Route::get('/formulario','StoreController@index')->name('formul');
 
 
 
@@ -74,6 +74,12 @@ Route::post('/prueba3/public/storage/create', 'StoreController@guardar')->name('
 //con esto borro los pdf.
 //Storage::delete('file.jpg');
 //Storage::delete(['file1.jpg', 'file2.jpg']);
+//
+//
+//
+//
+//
+//
 //
 //
 
