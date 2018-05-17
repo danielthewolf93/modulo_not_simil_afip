@@ -37,7 +37,7 @@ class Notificaciones extends Request
             'recipient_id' => 'required',
             'body'=> 'required|max:25'
 
-            
+            ''
 
 
             

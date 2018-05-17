@@ -117,11 +117,12 @@ Route::get('search/autocomplete', 'SearchController@autocomplete')->name('search
 
 
 
+//controles para el ingreso en el formulario desde el servidor.
+//debo controlar la entrada a personas ajenas
 
+Route::get('/form', 'FormController@index')->name('formu') ;
 
-Route::get('/form', 'FormController@index');
-
-Route::post('/form', 'FormController@store');
+Route::post('/form', 'FormController@store')->name('formus');
 
 
 

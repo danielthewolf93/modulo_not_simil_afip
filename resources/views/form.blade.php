@@ -18,7 +18,7 @@
               <div class="panel-heading">Formulario</div>
               <div class="panel-body">
  @include('messages')
-                  <form class="form-horizontal" role="form" method="POST" action="{{ url('/form') }}">
+                  <form class="form-horizontal" role="form" method="POST" action="{{ url('formus') }}">
                       {{ csrf_field() }}
  
                          <div class="form-group">
