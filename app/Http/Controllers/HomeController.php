@@ -8,6 +8,8 @@ use App\User;
 
 use App\Message;
 
+use Illuminate\Support\Facades\Input;
+
 class HomeController extends Controller
 {
     /**
@@ -95,37 +97,55 @@ $this->validate($request, $rules, $messages);
     public function elegirmodel()
     {
 
-        if ($modelo==0) {
-
-            //controlo y devuelvo para que seleccione algun tipo y notifico del error
-            //
-        }
-
-        if ($modelo==1) {
+//controlar el modelo y enviar datos compact al formulario.
 
 
-           return view('modelo1',compact('cuitcont','matricula'));
+
+
+       //$inputs=Input::all();
+       //
+       //$name = Input::get('name');
+
+        
+
+
+       $mode= Input::get('modeloform');
+
+       $cuit= Input::get('cuit');
+
+       $matricula= Input::get('matricula');
+
+       $fecha= Input::get('fecha_hoy');
+
+
+       
+
+        
+
+        if ( $mode==1) {
+
+
+           return view('modelo1',compact('cuit','matricula','fecha'));
            
         }
         
-        if ($modelo==2) {
+        if ( $mode==2) {
 
 
-           return view('modelo2',compact('cuitcont','matricula'));
+           return view('modelo2',compact('cuit','matricula','fecha'));
        
         }
 
-        if ($modelo==3) {
+        if ( $mode==3) {
 
-
-           return view('modelo3',compact('cuitcont','matricula'));
+          return view('modelo3',compact('cuit','matricula','fecha'));
         
         }
 
+}
 
 
-
-    }
+    
 
 
 //

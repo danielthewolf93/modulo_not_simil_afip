@@ -14,8 +14,6 @@
                         </div>
                     @endif
 
-                    
-
                     <p>*Mantenimiento de 15 a 17hs.</p> 
                 </div>
             </div>

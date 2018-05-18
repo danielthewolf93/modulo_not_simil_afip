@@ -93,9 +93,7 @@
     <!--fijar control en javascript.
 
     -->
-
     <script src="../../js/validateforms.js"></script>
-   
     
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 

@@ -23,15 +23,37 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/messages', 'HomeController@store')->name('messages.store');
 
 
-
-Route::get('/modelo1',['as'=>'model1',function(){
-
-
-return view('modelo1');
+/*
+Route::get('model/{idmodel}/{cuit}/{matricula}/{fecha_hoy}/los',['as'=>'model1',function(idmodel,cuit,matricula,fecha_hoy){
 
 
 
-}]);
+if (idmodel==1) {
+    return view('modelo1');
+
+}
+
+if (idmodel==2) {
+    return view('modelo2');
+
+}
+if (idmodel==3) {
+    return view('modelo3');
+}
+
+
+
+
+}]);*/
+
+Route::post('/model','HomeController@elegirmodel')->name('model1');
+
+/*
+Route::get('k_calificacion/{id}/{idk}/asignar', [
+            'uses' => 'K_calificacionController@asignar',
+            'as'=>'k_calificacion.asignar']);
+*/
+
 
 Route::get('/modelo2',['as'=>'model2',function(){
 
