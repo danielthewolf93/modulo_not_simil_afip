@@ -6,17 +6,32 @@
 	
 
 	<div class="contener">
-		
-	<label for="">Cuit</label>
-	  {{ $cuit }}
+	
+			<label for="">Fecha Hoy:</label>
+			 {{ date('Y-m-d') }}
+			 <br>
+			<label for="">Id Usuario:</label>
+			{{ Auth::user()->name }}
+			<br>
+			<label for="">Cuit:</label>
+			  {{ $cuit }}
+			<br>
+			<label for="">Matricula:</label>
+			{{ $matricula }}
+			<br>
+			<label for="">Fecha:</label>
+			{{ $fecha }}
+			<br>
+			<textarea name="texto1" placeholder="Texto 1"></textarea> 
+			<br><br>
+			<textarea name="texto2" placeholder="Texto 2"></textarea> 
+			<br><br>
+			<textarea name="texto3" placeholder="Texto 3"></textarea> 
 	<br>
-	<label for="">Matricula</label>
-	{{ $matricula }}
-	<br>
-	<label for="">Fecha</label>
-	{{ $fecha }}
 
 	</div>
+	<br>
+
 
 
      <a href="#" class="btn btn-primary ">Enviar</a>
