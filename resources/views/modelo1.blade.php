@@ -8,6 +8,10 @@
 
 <div class="contener">
 	
+
+
+			
+
 			<label for="">Fecha Hoy:</label>
 			 {{ date('Y-m-d') }}
 			 <br>

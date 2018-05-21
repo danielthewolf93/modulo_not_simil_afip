@@ -1,10 +1,11 @@
 <?php
 
+
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class Notificaciones extends Request
+class ModelosIntimaciones extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -12,13 +13,8 @@ class Notificaciones extends Request
      * @return bool
      */
     public function authorize()
-    {   
-
-        
-
+    {
         return false;
-
-
     }
 
     /**
@@ -30,17 +26,11 @@ class Notificaciones extends Request
     {
         return [
 
-            //reglas de validaciones desde el servidor.
-            // 'body'=> 'required|max:25       //             'recipient_id' => 'required',
+            'cuit' => 'required',
 
-           
-            'recipient_id' => 'required',
-            'body'=> 'required|max:25'
+            'fecha_hoy' => 'required'
 
-            
-
-
-            
+            //
         ];
     }
 }

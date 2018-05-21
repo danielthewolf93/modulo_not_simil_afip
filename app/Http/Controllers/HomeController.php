@@ -102,6 +102,7 @@ $this->validate($request, $rules, $messages);
 
 
 
+
        //$inputs=Input::all();
        //
        //$name = Input::get('name');
