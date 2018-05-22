@@ -71,6 +71,8 @@
 *ver el tema de notificaciones el contador y el tema de lectura al hacer click para que se eleimini o se vacie el contador
 *
 * empezar a realizar una vista distinta para el usuario normal seria el contribuyente
+*
+* dar distinta clase de colores utilizar lo de bootstrap o crear mi estilo para cada tipo de tema de mensaje.
 
 
 *ademas poder dar la opcion al remitente empleado de elegir mediante un checkbox la importancia del mismo --}}
