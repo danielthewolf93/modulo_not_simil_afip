@@ -27,7 +27,7 @@
                                     
                                    <select class="form-control" name="recipient_id">
                                        
-                                       <option value="">Selecciona el usuario</option>
+                                       <option  value=""  >Selecciona el usuario</option>
                                        <<?php foreach ($users as $user ): ?>
 
                                         <option value="{{$user->id }}">{{$user->name}} </option>
@@ -36,6 +36,8 @@
                                    </select> 
 
                                 </div>
+
+                               
 
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>

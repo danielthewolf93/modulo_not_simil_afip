@@ -8,7 +8,10 @@ use App\User;
 
 use App\Message;
 
+use App\Notificaciones;
+
 use Illuminate\Support\Facades\Input;
+
 
 class HomeController extends Controller
 {
@@ -52,13 +55,14 @@ class HomeController extends Controller
 
     {
 
-        //Validacion-parte-servidor-hacer-en-todas
+    //Validacion-parte-servidor-hacer-en-todas
         /*
           'body' => 'required|max:255',
           'recipient_id' => 'required',    
          */
         
 //Reglas de control para envio de mensaje
+
 
         $rules = [
         'recipient_id' => 'required',
@@ -75,7 +79,7 @@ class HomeController extends Controller
         'body_min.' => 'Agrega mayor longitud de texto.'
 ];
  
-$this->validate($request, $rules, $messages);
+        $this->validate($request, $rules, $messages);
           
         Message::create([
 
@@ -87,7 +91,31 @@ $this->validate($request, $rules, $messages);
 
         ]);
 
-        return back()->with('flash','Tu mensaje fue enviado');
+//guardando en tabla notificaciones
+//
+
+//puedo mejorar esto cambiando el campo texto_notif
+//por id_mensaje y tener acceso a todo el cuerpo del mensaje aunq en notif tengo casi todo
+//
+
+        Notificaciones::create([
+
+
+            'tipo_notific'  =>   'normal',
+            'notif_estado'  =>   'activo',
+            'texto_notific' =>    $request->body,
+            'adjunto'  => 'vacio',
+            'id_personal' => auth()->id(),
+            'id_recep' =>   $request->recipient_id,
+            
+
+        ]);
+
+
+          return back()->with('flash','Tu mensaje fue enviado');
+
+
+     
         //return $request->all();
         
     }
