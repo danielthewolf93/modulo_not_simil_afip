@@ -22,7 +22,7 @@
 
 <br>
 
-<h1><i &nbsp class="fa fa-address-card" ></i>&nbspJuan Perez</h1>
+<h1><i &nbsp class="fa fa-address-card" ></i>&nbsp{{ Auth::user()->name }}</h1>
 <h3>&nbsp&nbsp&nbspCuit 20-37462532-3</h3>
 <br>
 <br>
