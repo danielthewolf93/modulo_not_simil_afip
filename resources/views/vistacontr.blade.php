@@ -60,9 +60,20 @@
     </thead>
     <tbody>
       
+{{-- Cambios para terminar las notificaciones --}}
+
+{{--agregar las notificaciones para todos ademas de traer los datos si ha sido leido o no...  --}}
 
 
+{{-- ver el tema del if dentro del foreach para mostrar o no el icono de adjunto ademas de mostrar el color rojo o verde o amarillo segun el tipo de mensaje 
 
+
+*ver el tema de notificaciones el contador y el tema de lectura al hacer click para que se eleimini o se vacie el contador
+*
+* empezar a realizar una vista distinta para el usuario normal seria el contribuyente
+
+
+*ademas poder dar la opcion al remitente empleado de elegir mediante un checkbox la importancia del mismo --}}
 
 @foreach ($notificaciones as $notif)
     <tr>
