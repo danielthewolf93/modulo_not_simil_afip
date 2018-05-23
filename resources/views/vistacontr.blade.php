@@ -96,8 +96,8 @@
 @foreach ($notificaciones as $notif)
     <tr>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->created_at }}</td>
-        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->tipo_notific }}</td>
-        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ Auth::user()->name }}</td>
+        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->tema_notif }}</td>
+        <td class="{{ activeMenu($notif->tipo_notific) }}">Juan Perez</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->notif_despac }}</td> 
 
     <td><i &nbsp class="glyphicon glyphicon-paperclip 
