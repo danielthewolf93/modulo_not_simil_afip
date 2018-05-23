@@ -3,9 +3,9 @@
 @section('content')
 
 
-<nav>
+
 	<ul><a href="{{ route('visualcon') }}">Rentas-Notificaciones</a> / Mensajes</ul>
-</nav>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,7 +32,7 @@
 <p>Cuerpo de la notificacion</p>
 
 
-<a href="" class="btn btn-primary">Volver</a>
+<a href="{{ route('visualcon') }}" class="btn btn-primary">Volver</a>
 
 
 @endsection

@@ -163,3 +163,4 @@ Route::post('/form', 'FormController@store')->name('formus');
 //Route::any('/formulario/contribuyente','ForController@contrib')->name('formularioss');
 
 
+/*---Hacer 2 :layouts 1 para los contribuyentes y otro para los empleados normales. */
