@@ -85,8 +85,14 @@
     
     return 'normal';
   }
-   else
-    return 'importante';
+   if ($tipo_not == 'bajo') {
+     
+     return 'bajo';
+   }
+    if ($tipo_not == 'importante') {
+     
+     return 'importante';
+   }
 
   }
     
@@ -94,30 +100,23 @@
 
 
 @foreach ($notificaciones as $notif)
+        
     <tr>
-        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->created_at }}</td>
+      
+        <td class="{{ activeMenu($notif->tipo_notific) }}" >{{ $notif->created_at }}</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->tema_notif }}</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">Juan Perez</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->notif_despac }}</td> 
 
     <td><i &nbsp class="glyphicon glyphicon-paperclip 
     " ></i></td>
-      </tr>
+
+      <td> <a href="{{ route('home')}}" class="btn btn-primary">Ver mensaje</a> <td>
+      
 
 @endforeach
   
-
-
-
-
-
-      
-
-
-
-
-
-
+ 
 
 
       

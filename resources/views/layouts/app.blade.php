@@ -30,11 +30,20 @@
 
 
     <style >
+
+        .bajo{
+
+            text-decoration: none;
+            color: #669933;
+
+
+
+        }
         
         .normal{
 
             text-decoration: none;
-            color: green;
+            color: #FFC300;
 
 
 
@@ -43,7 +52,7 @@
          .importante{
 
             text-decoration: none;
-            color: red;
+            color: #cb4335;
 
 
 

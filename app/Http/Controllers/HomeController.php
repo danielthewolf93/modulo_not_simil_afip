@@ -101,13 +101,15 @@ class HomeController extends Controller
         Notificaciones::create([
 
 
-            'tipo_notific'  =>   'importante',
+            'tipo_notific'  =>    $request->tipo_not,
             'notif_estado'  =>   'activo',
             'texto_notific' =>    $request->body,
             'adjunto'  => 'vacio',
             'id_personal' => auth()->id(),
             'id_recep' =>   $request->recipient_id,
-            'notif_despac' => 'COBRANZA RENTAS CAT.'
+            'notif_despac' => 'COBRANZA RENTAS CAT.',
+            'tema_notif' => $request->tema_not,
+
             
 
         ]);

@@ -28,4 +28,13 @@ public function index()
 
 }
 
+public function cuerpo_msj()
+{
+	
+	//controlamos que el id del contrib == id del mensaje q quiere entrar sino sale un error
+	//
+	//controlar que el id del mensaje conrresponda con el id del mensaje del contrib
+
+}
+
 }

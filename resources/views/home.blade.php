@@ -33,12 +33,38 @@
                                    </select> 
 
                                 </div>
+
+                                <div class="form-group">
+                                    
+                                    <label for="tema_not">Motivo del Mensaje</label>
+                                    <input type="text" name="tema_not" class="form-control" placeholder="Ingrese motivo">
+
+
+                                </div>
                 
                                 <div class="form-group">
                                     <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
                                 </div>
 
                                 
+                                <div class="form-group">
+                                    
+                                    <label for="tipo_not">Prioridad</label>
+                                    <select class="form-control" name="tipo_not"> 
+                                    
+                                        <option value="bajo">Baja</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="importante">Alta</option>
+
+                                    
+                                    </select>
+
+
+                                </div>
+
+                                
+
+
                                 
                                 <label for="adjunto">Adjuntar</label>
                                 <div class="form-group">

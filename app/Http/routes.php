@@ -23,6 +23,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/messages', 'HomeController@store')->name('messages.store');
 
 
+//ver esto id_mensaje_ id_recept y controlar si el id_recept es igual al id auth ... si es asi pase sino volver y dar un msj de 
+//error
+//y controlar el id_mensaje si existe sino mostrar una advertencia.
+//con un cuadro de javascript
+
+Route::get('/visualizacioncont/mensaje/{id_mensaje}/{id_recept}','VisualisConController@cuerpo_msj')->name('msj_notif');
+
+
 /*
 Route::get('model/{idmodel}/{cuit}/{matricula}/{fecha_hoy}/los',['as'=>'model1',function(idmodel,cuit,matricula,fecha_hoy){
 
