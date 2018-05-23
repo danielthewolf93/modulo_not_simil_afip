@@ -95,8 +95,24 @@
    }
 
   }
+  
+   ?>
+
+<?php function controlAdjunto($adj)
+{
+  
+  if ($adj == 'vacio') {
     
-  ?>
+    return ' ';
+  }
+
+  else
+
+    return 'glyphicon glyphicon-paperclip' ;
+
+}
+
+ ?>
 
 
 @foreach ($notificaciones as $notif)
@@ -108,8 +124,8 @@
         <td class="{{ activeMenu($notif->tipo_notific) }}">Juan Perez</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->notif_despac }}</td> 
 
-    <td><i &nbsp class="glyphicon glyphicon-paperclip 
-    " ></i></td>
+    <td><i &nbsp class="{{ controlAdjunto($notif->adjunto) }}" ></i>
+    </td>
 
       <td> <a href="{{ route('home')}}" class="btn btn-primary">Ver mensaje</a> <td>
       
