@@ -142,7 +142,7 @@
     <tr>
         <td><i &nbsp class="{{ controlLectura($notif->notif_estado) }}" ></i></td>
         <td><i &nbsp class="{{ controlAdjunto($notif->adjunto) }}" ></i></td>
-        <td class="{{ activeMenu($notif->tipo_notific) }}" >{{ $notif->created_at }}</td>
+        <td class="{{ activeMenu($notif->tipo_notific) }}" >{{$notif->created_at }}</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->tema_notif }}</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->notif_despac }}</td> 
 
