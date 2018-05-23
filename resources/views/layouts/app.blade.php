@@ -27,6 +27,35 @@
             margin-right: 6px;
         }
     </style>
+
+
+    <style >
+        
+        .normal{
+
+            text-decoration: none;
+            color: green;
+
+
+
+        }
+
+         .importante{
+
+            text-decoration: none;
+            color: red;
+
+
+
+        }
+
+        .error{
+
+            color: red;
+            font-size: 12px;
+        }
+
+    </style>
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">

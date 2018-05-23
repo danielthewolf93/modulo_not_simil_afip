@@ -12,7 +12,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
- 
+
+
 
 <div class="container">
     <div class="row">
@@ -22,7 +23,7 @@
 
 <br>
 
-<h1><i &nbsp class="fa fa-address-card" ></i>&nbsp{{ Auth::user()->name }}</h1>
+<h1><i &nbsp class="fa fa-address-card" ></i>&nbspJuan Perez</h1>
 <h3>&nbsp&nbsp&nbspCuit 20-37462532-3</h3>
 <br>
 <br>
@@ -77,12 +78,27 @@
 
 *ademas poder dar la opcion al remitente empleado de elegir mediante un checkbox la importancia del mismo --}}
 
+
+<?php function activeMenu($tipo_not){
+  
+  if ($tipo_not == 'normal') {
+    
+    return 'normal';
+  }
+   else
+    return 'importante';
+
+  }
+    
+  ?>
+
+
 @foreach ($notificaciones as $notif)
     <tr>
-        <td>{{ $notif->created_at }}</td>
-        <td>{{ $notif->tipo_notific }}</td>
-        <td>{{ $notif->id_recep }}</td>
-        <td>{{ $notif->id_personal }}</td> 
+        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->created_at }}</td>
+        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->tipo_notific }}</td>
+        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ Auth::user()->name }}</td>
+        <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->notif_despac }}</td> 
 
     <td><i &nbsp class="glyphicon glyphicon-paperclip 
     " ></i></td>
