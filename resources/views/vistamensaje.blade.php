@@ -29,7 +29,7 @@
 
 <h2>Tema de Notificacion</h2>	
 
-<p>Cuerpo de la notificacion</p>
+<p>Cuerpo del Mensaje</p>
 
 
 <a href="{{ route('visualcon') }}" class="btn btn-primary">Volver</a>

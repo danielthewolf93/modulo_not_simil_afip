@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Notificaciones;
 
+use Illuminate\Support\Facades\Input;
+
 class VisualisConController extends Controller
 {
     
@@ -44,6 +46,24 @@ public function cuerpo_msj()
 	tambien debo guardar un registro del movimiento de lo que estoy haciendo ademas de poder hacer
 	un update para actualizar el campo updated_at y tambien notif_estado a leido una vez que se acceda y cada vez que se acceda actualizar todo pero guardar registro de todo en notificaciones_movimiento.
 	*/
+
+
+
+
+
+	$inputs=Input::all();
+
+
+// ver id mensaje buscar en base de datos traer los datos del mensaje junto con el tema de la notificacion si incluye o no archivo 
+// adjunto....
+// 
+// 
+/*	$contrib= $inputs['id_recept'];
+
+	$mensaje= $inputs['id_notif'];
+
+
+*/
 
 	return view('vistamensaje');
 
