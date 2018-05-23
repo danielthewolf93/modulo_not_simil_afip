@@ -127,7 +127,7 @@
     <td><i &nbsp class="{{ controlAdjunto($notif->adjunto) }}" ></i>
     </td>
 
-      <td> <a href="{{ route('home')}}" class="btn btn-primary">Ver mensaje</a> <td>
+      <td> <a href="{{ route('msj_notif',[$notif->id_notific,Auth::user()->id])}}" class="btn btn-primary">Ver mensaje</a> <td>
       
 
 @endforeach

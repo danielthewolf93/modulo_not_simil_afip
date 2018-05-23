@@ -28,7 +28,11 @@ Route::post('/messages', 'HomeController@store')->name('messages.store');
 //y controlar el id_mensaje si existe sino mostrar una advertencia.
 //con un cuadro de javascript
 
-Route::get('/visualizacioncont/mensaje/{id_mensaje}/{id_recept}','VisualisConController@cuerpo_msj')->name('msj_notif');
+Route::get('/visualizacioncont/mensaje/{id_mensaje}/cuit/{id_recept}','VisualisConController@cuerpo_msj')->name('msj_notif');
+
+
+ // Route::get('crear-obra/{id}', ['as' => 'crear_obra', 'uses' => 'ObrasController@create']);
+
 
 
 /*
