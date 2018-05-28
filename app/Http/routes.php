@@ -34,6 +34,9 @@ Route::get('/visualizacioncont/mensaje/{id_mensaje}/cuit/{id_recept}','VisualisC
 
 Route::get('/visualizacioncont/{id_notific}','VisualisConController@delete_not')->name('delete_not');
 
+
+Route::get('C:/wamp/www/prueba3/public/storage/{id_notific}','VisualisConController@traerpdf')->name('pdf_get');
+
  // Route::get('crear-obra/{id}', ['as' => 'crear_obra', 'uses' => 'ObrasController@create']);
 
 

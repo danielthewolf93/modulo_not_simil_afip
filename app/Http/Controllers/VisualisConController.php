@@ -193,5 +193,17 @@ public function delete_not($id_notific)
 }
 
 
+public function traerpdf($id_notific)
+{
+
+	//traer pdf.
+	$not=Notificaciones::where('id_notific','=',$id_notific);
+
+
+	
+
+	# code...
+}
+
 
 }

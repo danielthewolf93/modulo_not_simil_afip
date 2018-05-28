@@ -39,8 +39,22 @@
 
     <p>{{ ($notif->texto_notific) }}</p>
        
-    
+@if($notif->adjunto=='vacio')
+
+<p>No hay datos adjuntos</p>
+@else
+
+<p>Ventana</p>
+
+
+
+	<iframe src="http://docs.google.com/gview?url=https://pdfobject.com/pdf/sample-3pp.pdf&embedded=true" 
+style="width:600px; height:500px;" frameborder="0"></iframe>
+
+
+@endif    
 @endforeach
+
 
 <br>
 
