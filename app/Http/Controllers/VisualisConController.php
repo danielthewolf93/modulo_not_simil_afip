@@ -22,7 +22,7 @@ public function index()
 	//*Ver notificaciones masivas como visualizarlas y poder borrarlas para ese usuario pero sin sacar las notificaciones de los
 	//demas
 
-	 $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->get();
+	 $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->orderBy('created_at','DSC')->get();
 
 	//  $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->get();
 
