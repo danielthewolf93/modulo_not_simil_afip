@@ -31,6 +31,9 @@ Route::post('/messages', 'HomeController@store')->name('messages.store');
 Route::get('/visualizacioncont/mensaje/{id_mensaje}/cuit/{id_recept}','VisualisConController@cuerpo_msj')->name('msj_notif');
 
 
+
+Route::get('/visualizacioncont/{id_notific}','VisualisConController@delete_not')->name('delete_not');
+
  // Route::get('crear-obra/{id}', ['as' => 'crear_obra', 'uses' => 'ObrasController@create']);
 
 
@@ -136,6 +139,8 @@ Route::get('/borrado','StoreController@borrar')->name('borrar_arch');
 
 
 Route::get('/visualizacioncont','VisualisConController@index')->name('visualcon');
+
+
 
 /*
 Route::get('/intim','IntimController@buscar')->name('intim2');

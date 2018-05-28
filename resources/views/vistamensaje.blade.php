@@ -24,12 +24,34 @@
 
 <br>
 
-<p>  Para: {{ Auth::user()->name }}    ( CUIT   {{ Auth::user()->id }} )</p>				ID MENSAJE:132111
+<p>  Para: {{ Auth::user()->name }}    ( CUIT   {{ Auth::user()->id }} )</p>				ID MENSAJE:{{ $id_mensaje }}
 
 
-<h2>Tema de Notificacion</h2>	
 
-<p>Cuerpo del Mensaje</p>
+
+
+
+
+
+@foreach ($notificaciones as $notif)
+        
+    <h2>{{$notif->tema_notif}}</h2>
+
+    <p>{{ ($notif->texto_notific) }}</p>
+       
+    
+@endforeach
+
+<br>
+
+
+
+
+
+
+
+
+
 
 
 <a href="{{ route('visualcon') }}" class="btn btn-primary">Volver</a>

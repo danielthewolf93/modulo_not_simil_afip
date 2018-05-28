@@ -26,7 +26,9 @@
 
 <br>
 
-<h1><i &nbsp class="fa fa-address-card" ></i>&nbspJuan Perez</h1>
+<h1><i &nbsp class="fa fa-address-card" ></i>&nbspJuan Perez</h1> 
+<h3>&nbsp&nbspAvisos</h3>
+<h3>&nbsp&nbsp  Sin leer  {{ count ($notificacionesnleidas) }} |  Leidos  {{ count ($notifleid) }}</h3>
 <h3>&nbsp&nbsp&nbspCuit 20-37462532-3</h3>
 <br>
 <br>
@@ -133,11 +135,18 @@
 
 }
 
- ?>
+?>
+
 
 
 
 @foreach ($notificaciones as $notif)
+
+@if(count($notif)==0)
+
+ <td> <a href="{{ route('delete_not',[$notif->id_notific]) }}" class="btn btn-primary">X</a></td>
+
+@else
         
     <tr>
         <td><i &nbsp class="{{ controlLectura($notif->notif_estado) }}" ></i></td>
@@ -152,8 +161,8 @@
         
 
       <td> <a href="{{ route('msj_notif',[$notif->id_notific,Auth::user()->id])}}" class="btn btn-primary">Ver mensaje</a> <td>
-      
-
+      <td> <a href="{{ route('delete_not',[$notif->id_notific]) }}" class="btn btn-primary">X</a></td>
+@endif
 @endforeach
   
  

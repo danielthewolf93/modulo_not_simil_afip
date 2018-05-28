@@ -18,6 +18,8 @@
 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+  
+
     <style>
         body {
             font-family: 'Lato';
@@ -101,9 +103,14 @@
                          <li><a href="home">Enviar Mensaje</a></li>
 
                          <li><a href="{{ route('intim')}}">Enviar Intimaci&oacute;n</a></li>
+                                                        
 
 
-                            <li><a href="#">Notificaciones<span class="badge">1</span></a></li>
+
+    {{--<li><a href="#">Notificaciones<span class="badge">{{count($notificacionesnleidas) }}</span></a></li>--}}  
+                             <li><a href="#">Notificaciones<span class="badge">1</span></a></li>
+
+
                             <li><a href="{{  route('formul') }}">Enviar documento</a></li>
                         <li class="dropdown">
 
