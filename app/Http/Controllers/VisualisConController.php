@@ -109,6 +109,9 @@ public function cuerpo_msj($id_mensaje,$id_recept)
 
       $notificacionesnleidas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','activo')->get();
 
+
+
+
      // where('name', '=', $name)->where("pass", '=', $pass)->
 
 
@@ -168,13 +171,22 @@ public function delete_not($id_notific)
   Notificaciones::where('id_notific','=',$id_notific)->update(['notif_estado' => 'baja']);
 
 
-  $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->get();
+ // $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->get();
 
 
   $notificacionesnleidas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','activo')->get();
 
 
-  return view('vistacontr',compact('notificaciones','notificacionesnleidas'));
+  	 $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->orderBy('created_at','DSC')->get();
+
+	//  $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->get();
+
+
+
+	 $notifleid = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->where("notif_estado",'=','leido')->get();
+
+
+  return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid'));
 
 
 
