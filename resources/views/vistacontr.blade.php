@@ -28,7 +28,8 @@
 
 <h1><i &nbsp class="fa fa-address-card" ></i>&nbspJuan Perez</h1> 
 <h3>&nbsp&nbspAvisos</h3>
-<h3>&nbsp&nbsp  Sin leer  {{ count ($notificacionesnleidas) }} |  Leidos  {{ count ($notifleid) }}</h3>
+<h3>&nbsp&nbsp  Sin leer <a href="{{ route('visualcon') }}">{{ count ($notificacionesnleidas) }}</a>  |  Leidos  <a href="{{ route('visualcon') }}">{{ count ($notifleid) }}</a>  </h3>
+<h3>&nbsp&nbsp  Archivados    <a href="{{ route('baul')}}">{{ count($notifborradas)  }}</a>  </h3> 
 <h3>&nbsp&nbsp&nbspCuit 20-37462532-3</h3>
 <br>
 <br>
@@ -50,10 +51,18 @@
             <div class="panel panel-default">
 
 <br>
-	<h3>Notificaciones</h3>
+	<h3>{{$nombre}}</h3>
 <br>
 	
 
+ @if(count($notificaciones)==0)
+
+
+<p>&nbsp &nbsp No tiene mensajes </p>
+
+
+@else 
+ 
 	<table class="table">
     <thead>
       <tr>
@@ -124,29 +133,49 @@
 <?php function controlLectura($adj)
 {
   
-  if ($adj == 'leido') {
+  if ($adj == 'activo') {
     
-    return 'glyphicon glyphicon-ok';
+    return 'glyphicon glyphicon-envelope';
   }
+
 
   else
 
-    return 'glyphicon glyphicon-envelope' ;
+    return 'glyphicon glyphicon-ok' ;
 
 }
+
+?>
+
+<?php function controlpag($routa)
+{
+
+
+if ($routa=='http://localhost:8000/visualizacionconts') {
+  
+
+return  'none';
+
+}
+
+else
+
+return  '';
+
+
+}
+
+
 
 ?>
 
 
 
 
-@foreach ($notificaciones as $notif)
+    @foreach ($notificaciones as $notif)
 
-@if(count($notif)==0)
 
- <td> <a href="{{ route('delete_not',[$notif->id_notific]) }}" class="btn btn-primary">X</a></td>
 
-@else
         
     <tr>
         <td><i &nbsp class="{{ controlLectura($notif->notif_estado) }}" ></i></td>
@@ -161,11 +190,14 @@
         
 
       <td> <a href="{{ route('msj_notif',[$notif->id_notific,Auth::user()->id])}}" class="btn btn-primary">Ver mensaje</a> <td>
-      <td> <a href="{{ route('delete_not',[$notif->id_notific]) }}" class="btn btn-primary">X</a></td>
-@endif
+      <td> <a href="{{ route('delete_not',[$notif->id_notific]) }}" class="btn btn-primary" style="display:{{ controlpag(Request::url()) }}">X</a></td>
+
+
 @endforeach
   
  
+
+
 
 
       
@@ -182,7 +214,7 @@
 
 
 	
-
+@endif
 
 
 

@@ -32,14 +32,38 @@ public function index()
 
 	  $notificacionesnleidas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','activo')->get();
 
+	  $nombre = "Notificaciones";
 
+	  $notifborradas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
 
-      return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid'));
+      return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas'));
 
 
 
 	//return view('vistacontr');
 
+
+}
+
+
+public function baul()
+{
+	
+  $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
+
+	//  $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->get();
+
+
+
+	 $notifleid = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->where("notif_estado",'=','leido')->get();
+
+	  $notificacionesnleidas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','activo')->get();
+
+	  $notifborradas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
+
+$nombre= "Avisos Archivados";
+
+ return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas'));
 
 }
 
@@ -81,9 +105,6 @@ public function cuerpo_msj($id_mensaje,$id_recept)
 
 	// $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->get();
 	
-
-
-
 /*
 	 Notificaciones::update([
 
@@ -100,10 +121,24 @@ public function cuerpo_msj($id_mensaje,$id_recept)
             
 
         ]);
+			
 
-*/
+*/		
+        foreach ($notificaciones as $not) {
+        	
+        }
 
-      $affectedRows = Notificaciones::where('id_notific','=',$id_mensaje)->update(['notif_estado' => 'leido']);
+        if ($not->notif_estado=='activo') {
+
+        	
+      	$affectedRows = Notificaciones::where('id_notific','=',$id_mensaje)->update(['notif_estado' => 'leido']);
+
+
+        }
+
+
+
+
 
 
 
@@ -185,8 +220,13 @@ public function delete_not($id_notific)
 
 	 $notifleid = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->where("notif_estado",'=','leido')->get();
 
+	 $notifborradas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
 
-  return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid'));
+	 $nombre = "Notificaciones";
+
+
+
+  return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','notifborradas','nombre'));
 
 
 
@@ -200,7 +240,7 @@ public function traerpdf($id_notific)
 	$not=Notificaciones::where('id_notific','=',$id_notific);
 
 
-	
+	return ;
 
 	# code...
 }

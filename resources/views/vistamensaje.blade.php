@@ -68,7 +68,7 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
 
 
 
-<a href="{{ route('visualcon') }}" class="btn btn-primary">Volver</a>
+<a href="{{ URL::previous() }}" class="btn btn-primary">Volver</a>
 
 
 @endsection
