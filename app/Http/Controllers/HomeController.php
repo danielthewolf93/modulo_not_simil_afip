@@ -12,6 +12,7 @@ use App\Notificaciones;
 
 use Illuminate\Support\Facades\Input;
 
+use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends Controller
 {
@@ -107,7 +108,7 @@ class HomeController extends Controller
             'adjunto'  => 'vacio',
             'id_personal' => auth()->id(),
             'id_recep' =>   $request->recipient_id,
-            'notif_despac' => 'COBRANZA RENTAS CAT.',
+            'notif_despac' => $request->tipo_desp,
             'tema_notif' => $request->tema_not,
 
             

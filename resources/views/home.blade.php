@@ -62,14 +62,31 @@
 
                                 </div>
 
+
+                                 <div class="form-group">
+                                    
+                                    <label for="tipo_desp">Despacho</label>
+                                    <select class="form-control" name="tipo_desp"> 
+                                    
+                                        <option value="Cobranza Rentas SFC">Cobranza Rentas SFC</option>
+                                        <option value="Administracion Rentas SFC">Administracion Rentas SFC</option>
+                                        <option value="Sistemas Rentas SFC">Sistemas Rentas SFC</option>
+
+                                    
+                                    </select>
+
+
+                                </div>
+
                                 
 
 
-                                
+                                <!--
                                 <label for="adjunto">Adjuntar</label>
                                 <div class="form-group">
                                 <input type="file" name="adjunto" class="form-control"/>
                                 </div>
+                            -->
 
 
                                 <div class="form-group">
