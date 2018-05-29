@@ -42,13 +42,13 @@
 @if($notif->adjunto=='vacio')
 
 <p>No hay datos adjuntos</p>
+
 @else
 
 <p>Ventana</p>
 
 
-
-	<iframe src="http://docs.google.com/gview?url=https://pdfobject.com/pdf/sample-3pp.pdf&embedded=true" 
+<iframe src="http://docs.google.com/gview?url=http://es.tldp.org/COMO-INSFLUG/es/pdf/Linuxdoc-Ejemplo.pdf&embedded=true" 
 style="width:600px; height:500px;" frameborder="0"></iframe>
 
 
@@ -57,15 +57,6 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
 
 
 <br>
-
-
-
-
-
-
-
-
-
 
 
 <a href="{{ URL::previous() }}" class="btn btn-primary">Volver</a>
