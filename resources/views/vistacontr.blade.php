@@ -190,7 +190,7 @@ return  '';
         
 
       <td> <a href="{{ route('msj_notif',[$notif->id_notific,Auth::user()->id])}}" class="btn btn-primary">Ver mensaje</a> <td>
-      <td> <a href="{{ route('delete_not',[$notif->id_notific]) }}" class="btn btn-primary" style="display:{{ controlpag(Request::url()) }}">X</a></td>
+      <td> <a href="{{ route('delete_not',[$notif->id_notific]) }}" class="btn btn-danger" style="display:{{ controlpag(Request::url()) }}">X</a></td>
 
 
 @endforeach
