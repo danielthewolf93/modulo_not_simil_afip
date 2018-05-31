@@ -1,7 +1,7 @@
 	@extends('layouts.app')
 	@section('content')
 	<h1>Modelo {{ $mode }}</h1>
-	<input type="hidden" name="model_tip" value="{{ $mode }}">
+	
 	
 	 <div class="form-group">
 
@@ -9,7 +9,7 @@
 
 <div class="contener">
 	
-
+<form action="{{ route('save_model') }}"    > 
 
 		
 
@@ -72,7 +72,8 @@
 			<input type="hidden" name="texto5" value="">
 
 			<input type="hidden" name="importe" value="">
-
+	
+	<input type="hidden" name="model_tip" value="{{ $mode }}">
 
 	<br>
 
@@ -81,13 +82,15 @@
 
 
      <a href="#" class="btn btn-primary ">Enviar</a>
-  
+  	
+  	<button type="submit">Guardar 2</button>
      
      <a href="{{ route('save_model') }}" class="btn btn-primary ">Guardar</a>
 		
 	 <a href="{{ route('intim') }}" class="btn btn-primary ">Cancelar</a>
 	
 
+</form>
 
      </div>
 	@endsection
