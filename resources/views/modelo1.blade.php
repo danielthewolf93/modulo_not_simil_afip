@@ -53,7 +53,7 @@
 			
 			
 
-			<label for="">Periodo:{{ $periodo }}</label>
+			<label for="">Periodo:</label>{{ $periodo }}
 
 
 			<input type="hidden" name="model_periodo" value="{{  $periodo }}">
@@ -83,7 +83,7 @@
      <a href="#" class="btn btn-primary ">Enviar</a>
   
      
-     <a href="#" class="btn btn-primary ">Guardar</a>
+     <a href="{{ route('save_model') }}" class="btn btn-primary ">Guardar</a>
 		
 	 <a href="{{ route('intim') }}" class="btn btn-primary ">Cancelar</a>
 	

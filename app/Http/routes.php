@@ -150,7 +150,7 @@ Route::get('/visualizacionconts','VisualisConController@baul')->name('baul');
 
 //Rutas del modelo
 
-Route::get('/model_save','ModelIntimControlller@save_model')->name('save_model');
+Route::get('/model_save','ModelIntimController@save_model')->name('save_model');
 
 
 
