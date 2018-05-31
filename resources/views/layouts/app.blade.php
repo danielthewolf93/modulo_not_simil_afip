@@ -108,7 +108,7 @@
 
 
     {{--<li><a href="#">Notificaciones<span class="badge">{{count($notificacionesnleidas) }}</span></a></li>--}}  
-                             <li><a href="#">Notificaciones<span class="badge">1</span></a></li>
+                             <li><a href="{{ route('visualcon') }}">Notificaciones<span class="badge">0</span></a></li>
 
 
                             <li><a href="{{  route('formul') }}">Enviar documento</a></li>

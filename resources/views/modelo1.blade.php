@@ -10,22 +10,38 @@
 	
 
 
-			
+		
 
 			<label for="">Fecha Hoy:</label>
 			 {{ date('Y-m-d') }}
+				
+			<input type="hidden" name="model_fecha_creac" value="{{  date('Y-m-d') }}">
+
+
 			 <br>
 			<label for="">Id Usuario:</label>
 			{{ Auth::user()->name }}
 			<br>
+			<input type="hidden" name="model_user" value="{{Auth::user()->name}}">
+
 			<label for="">Cuit:</label>
 			  {{ $cuit }}
+			<input type="hidden" name="model_cuit_cont" value="{{ $cuit }}">
+
 			<br>
 			<label for="">Matricula:</label>
 			{{ $matricula }}
+
+			<input type="hidden" name="model_cuit_matr" value="{{  $matricula }}">
+
 			<br>
 			<label for="">Fecha:</label>
 			{{ $fecha }}
+
+
+			<input type="hidden" name="model_fecha_eleg" value="{{  $fecha }}">
+
+
 			<br>
 			<br>
 			<textarea name="texto1" placeholder="Texto 1"></textarea> 
@@ -33,6 +49,14 @@
 			<textarea name="texto2" placeholder="Texto 2"></textarea> 
 			<br><br>
 			<textarea name="texto3" placeholder="Texto 3"></textarea> 
+
+			<input type="hidden" name="texto4">
+
+			<input type="hidden" name="texto5">
+
+			<input type="hidden" name="importe">
+
+
 	<br>
 
 	</div>

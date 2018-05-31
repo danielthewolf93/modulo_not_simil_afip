@@ -148,6 +148,11 @@ Route::get('/visualizacioncont','VisualisConController@index')->name('visualcon'
 Route::get('/visualizacionconts','VisualisConController@baul')->name('baul');
 
 
+//Rutas del modelo
+
+Route::get('/model_save','ModelIntimControlller@save_model')->name('save_model');
+
+
 
 /*
 Route::get('/intim','IntimController@buscar')->name('intim2');
