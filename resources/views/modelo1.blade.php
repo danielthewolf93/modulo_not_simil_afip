@@ -1,6 +1,7 @@
 	@extends('layouts.app')
 	@section('content')
-	<h1>Modelo 1</h1>
+	<h1>Modelo {{ $mode }}</h1>
+	<input type="hidden" name="model_tip" value="{{ $mode }}">
 	
 	 <div class="form-group">
 
@@ -47,7 +48,7 @@
 			<br>
 			<label for="">Fecha:</label>
 			{{ $fecha }}
-
+			<input type="hidden" name="model_fecha_eleg" value="{{  $fecha }}">
 			<br>
 			
 			
@@ -55,7 +56,7 @@
 			<label for="">Periodo:{{ $periodo }}</label>
 
 
-			<input type="hidden" name="model_fecha_eleg" value="{{  $fecha }}">
+			<input type="hidden" name="model_periodo" value="{{  $periodo }}">
 
 
 			<br>
@@ -66,11 +67,11 @@
 			<br><br>
 			<textarea name="texto3" placeholder="Texto 3"></textarea> 
 
-			<input type="hidden" name="texto4">
+			<input type="hidden" name="texto4" value="">
 
-			<input type="hidden" name="texto5">
+			<input type="hidden" name="texto5" value="">
 
-			<input type="hidden" name="importe">
+			<input type="hidden" name="importe" value="">
 
 
 	<br>

@@ -22,13 +22,15 @@ public function save_model(Request $request)
 	//hacer un historial...
 	
 
-	//validaciones
+	//faltan validaciones
+	
+
 
 	ModelDetalle::create([
 
-		'tributo'=>'dentro del ente 4 digitos de longitud.',//dentro del ente de tamño 4 de longitud es el tributo
-		'periodo'=>'m-y',//mes y anio del dia elegido por el que lo intiman
-		'tipo_modelo'=>$request->tipo_not,
+		'tributo'=>$request->model_tributo,//dentro del ente de tamño 4 de longitud es el tributo
+		'periodo'=>$request->model_periodo,//mes y anio del dia elegido por el que lo intiman
+		'tipo_modelo'=>$request->model_tip,
 		'texto_1'=>$request->texto1,
 		'texto_2'=>$request->texto2,
 		'texto_3'=>$request->texto3,
@@ -57,8 +59,7 @@ public function save_model(Request $request)
 		'dia_cread'=>$request->model_fecha_creac,
 		'dia_referenc'=>$request->model_fecha_eleg,
 		'dia_mod'=>$request->model_fecha_creac,
-
-
+		
 		'matricula'=>$request->model_cuit_matr,
 
 

@@ -154,29 +154,25 @@ class HomeController extends Controller
 
        $periodo = date('m/Y',strtotime(str_replace('-','/',$fecha)));
 
-
-       
-//$newDate1 = date('Y/m/d', strtotime(str_replace('-', '/', $fechadesde)));
-
         
 
         if ( $mode==1) {
 
 
-           return view('modelo1',compact('cuit','matricula','fecha','tributo','periodo'));
+           return view('modelo1',compact('mode','cuit','matricula','fecha','tributo','periodo'));
            
         }
         
         if ( $mode==2) {
 
 
-           return view('modelo2',compact('cuit','matricula','fecha','tributo'));
+           return view('modelo2',compact('mode','cuit','matricula','fecha','tributo'));
        
         }
 
         if ( $mode==3) {
 
-          return view('modelo3',compact('cuit','matricula','fecha','tributo'));
+          return view('modelo3',compact('mode','cuit','matricula','fecha','tributo'));
         
         }
 
