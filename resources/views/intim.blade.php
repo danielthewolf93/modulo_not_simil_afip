@@ -24,7 +24,7 @@
 									
 									<label class="form-group">Cuit</label>
 									<div class="form-group">
-										<input type="text" name="cuit" placeholder="cuit_contribuyente">
+										<input type="text" name="cuit" placeholder="cuit_contribuyente" maxlength="11">
 									</div>
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
@@ -35,6 +35,12 @@
 											<option value="3">Matricula3</option>
 										</select>
 									</div>
+									
+									<label class="form-group">Tributo</label>
+									<div class="form-group">
+										<input type="text" name="tributo" placeholder="tributo" maxlength="4">
+									</div>
+
 
 									<label class="form-group">Fecha</label>
                                 	 <div class="form-group">

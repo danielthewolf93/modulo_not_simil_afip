@@ -150,28 +150,33 @@ class HomeController extends Controller
 
        $fecha= Input::get('fecha_hoy');
 
+       $tributo= Input::get('tributo');
+
+       $periodo = date('m/Y',strtotime(str_replace('-','/',$fecha)));
+
 
        
+//$newDate1 = date('Y/m/d', strtotime(str_replace('-', '/', $fechadesde)));
 
         
 
         if ( $mode==1) {
 
 
-           return view('modelo1',compact('cuit','matricula','fecha'));
+           return view('modelo1',compact('cuit','matricula','fecha','tributo','periodo'));
            
         }
         
         if ( $mode==2) {
 
 
-           return view('modelo2',compact('cuit','matricula','fecha'));
+           return view('modelo2',compact('cuit','matricula','fecha','tributo'));
        
         }
 
         if ( $mode==3) {
 
-          return view('modelo3',compact('cuit','matricula','fecha'));
+          return view('modelo3',compact('cuit','matricula','fecha','tributo'));
         
         }
 

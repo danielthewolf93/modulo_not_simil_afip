@@ -34,9 +34,25 @@
 
 			<input type="hidden" name="model_cuit_matr" value="{{  $matricula }}">
 
+			
+			<br>
+			<label for="">Tributo:</label>
+			{{ $tributo }}
+
+			<input type="hidden" name="model_tributo" value="{{  $tributo }}">
+
+
+
+
 			<br>
 			<label for="">Fecha:</label>
 			{{ $fecha }}
+
+			<br>
+			
+			
+
+			<label for="">Periodo:{{ $periodo }}</label>
 
 
 			<input type="hidden" name="model_fecha_eleg" value="{{  $fecha }}">
