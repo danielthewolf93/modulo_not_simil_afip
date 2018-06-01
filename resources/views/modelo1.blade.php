@@ -23,7 +23,7 @@
 			<label for="">Id Usuario:</label>
 			{{ Auth::user()->name }}
 			<br>
-			<input type="hidden" name="model_user" value="{{Auth::user()->name}}">
+			<input type="hidden" name="model_user" value="{{Auth::user()->id}}">
 
 			<label for="">Cuit:</label>
 			  {{ $cuit }}

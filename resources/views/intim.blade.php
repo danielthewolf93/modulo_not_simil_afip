@@ -51,6 +51,19 @@
 
 									<input type="submit" name="envio" class="btn btn-primary " value="Generar Modelo">
 								</div>
+
+								<div class="form-group">
+									
+									<input type="button"  class="btn btn-success" name="mas1modelo" value="+1">
+
+								</div>
+
+								<div class="form-group">
+									
+									<a href="{{ route('lista_modelos') }}" class="btn btn-primary">Listar Modelos Creados</a>
+						
+
+								</div>
  
                               </div>
 

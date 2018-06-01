@@ -57,8 +57,7 @@
 
         </div>
 
-         <a href="{{ route('visualcon') }}" class="btn btn-primary">Enviar a Visualiz Contrib</a>
-
+         
 
         </button>
         </form>
