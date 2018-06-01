@@ -101,6 +101,10 @@ Route::get('formulario','StoreController@index')->name('formulario');*/
 
 Route::get('/intim','IntimController@index')->name('intim');
 
+
+Route::get('/intim/id_modelo/cuit/','IntimController@agregar')->name('agregar_model_list');
+
+
 //Lista de Modelos
 
 Route::get('/lista_modelos','LModelosController@index')->name('lista_modelos');
@@ -170,8 +174,6 @@ Route::get('/visualizacioncont','VisualisConController@busqueda')->name('busqued
 */
 
 Route::get('search/autocomplete', 'SearchController@autocomplete')->name('search-autocomplete');
-
-
 
 
 //controles para el ingreso en el formulario desde el servidor.

@@ -20,4 +20,13 @@ class IntimController extends Controller
     	return view('intim');
 
     }
+
+
+    public function agregar()
+    {
+    	
+
+    	return view('intim');
+
+    }
 }

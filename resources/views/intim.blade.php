@@ -46,12 +46,12 @@
                                 	 	<input type="date" name="fecha_hoy" >
 									</div>
 									
-								<div class="form-group">
+									<div class="form-group">
 
-									<input type="submit" name="envio" class="btn btn-primary " value="Generar Modelo">
+									<input type="submit" name="envio" class="btn btn-primary " value="Generar Modelo" >
 
 			
-									<input type="button"  class="btn btn-success" name="mas1modelo" value="+1">
+									<a href="{{ route('agregar_model_list') }}" class="btn btn-success">+1</a>
 
 	
 									<a href="{{ route('lista_modelos') }}" class="btn btn-primary" >Listar Modelos Creados</a>

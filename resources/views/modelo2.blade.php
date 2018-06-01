@@ -30,18 +30,12 @@
 
 	<div class="contener">
 	
-			
-		
-			
 
-		
 
 			<h3>Detalle</h3>
 			
 
 			
-
-
 
 				<table class="table">
     <thead>
