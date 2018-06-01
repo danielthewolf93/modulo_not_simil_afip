@@ -15,7 +15,6 @@
  								   <div class="form-group">
  									    <label class="form-group">Modelo de Intimacion</label>
 	                                    <select class="form-control" name="modeloform">
-	                                    <option value="0" >Seleccionar Modelo</option> 
 	                                    <option value="1">Modelo 1</option>
 	                                    <option value="2">Modelo 2</option>    
 	                                    <option value="3">Modelo 3</option>
@@ -29,7 +28,7 @@
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
 										<select name="matricula">
-											<option value="0">Seleccionar</option>
+											
 											<option value="1">Matricula1</option>
 											<option value="2">Matricula2</option>
 											<option value="3">Matricula3</option>
@@ -51,17 +50,11 @@
 
 									<input type="submit" name="envio" class="btn btn-primary " value="Generar Modelo">
 
-								
-
-							
-									
+			
 									<input type="button"  class="btn btn-success" name="mas1modelo" value="+1">
 
-								
-
-								
-									
-									<a href="{{ route('lista_modelos') }}" class="btn btn-primary">Listar Modelos Creados</a>
+	
+									<a href="{{ route('lista_modelos') }}" class="btn btn-primary" >Listar Modelos Creados</a>
 
 									</div>
 						
