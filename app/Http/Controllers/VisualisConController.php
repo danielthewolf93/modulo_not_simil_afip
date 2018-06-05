@@ -8,6 +8,14 @@ use App\Http\Requests;
 
 use App\Notificaciones;
 
+use App\Modelos;
+
+use PDF;
+
+use App;
+
+use App\ModelDetalle;
+
 use Illuminate\Support\Facades\Input;
 
 class VisualisConController extends Controller
@@ -61,7 +69,11 @@ public function baul()
 
 	  $notifborradas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
 
-$nombre= "Avisos Archivados";
+	  $nombre= "Avisos Archivados";
+
+	 // $modelosIntimac = Modelos::where('cuit_contrib','=',20374625323)->where('estado','=','enviado')->get();
+
+
 
  return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas'));
 
@@ -148,6 +160,27 @@ public function cuerpo_msj($id_mensaje,$id_recept)
 
 
      // where('name', '=', $name)->where("pass", '=', $pass)->
+     // 
+     // 
+
+       if ($not->adjunto > 1) {
+
+     	//aca pasariamos los datos del modelo si existe ...para generar el pdf
+     	
+       	$modeloInt= Modelos::where('id','=',$not->adjunto)->get();
+
+
+       	//ver si hace falta guardar los detalles es decir en vez de hacer la baja logica aplicar una fisica ...
+
+       	$modeloIntDet= ModelDetalle::where('idmodelo','=',$not->adjunto)->where("estado_mdetalle",'=','guardado')->get();
+
+     	$datos_pruebamod = "Modelo:3,periodo,etc,etc";
+     	return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesleidas','datos_pruebamod','modeloInt','modeloIntDet'));
+     }
+
+
+
+
 
 
       return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesnleidas'));
@@ -197,6 +230,58 @@ public function cuerpo_msj($id_mensaje,$id_recept)
 	
 
 }
+
+
+
+
+public function imprimir_msj($id_modelo)
+{
+	//Descargar el archivo modelo de intimacion 
+		
+		$import=0;
+		
+		$modeloInt= Modelos::where('id','=',$id_modelo)->get();
+
+
+       	//ver si hace falta guardar los detalles es decir en vez de hacer la baja logica aplicar una fisica ...
+
+       	$modeloIntDet= ModelDetalle::where('idmodelo','=',$id_modelo)->where("estado_mdetalle",'=','guardado')->get();
+
+   		
+   		foreach ($modeloIntDet as $md) {
+   			
+
+   			$import= ($import )+ ($md->importe);
+
+   		}
+
+
+
+   		$view =  view('invoice', compact('id_mensaje','notificaciones','notificacionesleidas','datos_pruebamod','modeloInt','modeloIntDet','import'))->render();
+
+        $pdf = App::make('dompdf.wrapper');
+
+        $pdf->loadHTML($view);
+        
+        return $pdf->download('intimacion_cuit.pdf');
+
+
+        //para solo descargar
+        //        return $pdf->stream('invoice');
+
+     	
+
+
+
+        
+}
+
+
+
+
+
+
+
 
 
 public function delete_not($id_notific)

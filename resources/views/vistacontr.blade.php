@@ -118,13 +118,23 @@
 {
   
   if ($adj == 'vacio') {
+    //controlamos si solamente es un msj de texto comun.
     
     return ' ';
   }
 
-  else
+     if ($adj > 1) {
+      //controlamos modelos enviados
+       
+       return 'glyphicon glyphicon-user';
+     }
 
-    return 'glyphicon glyphicon-paperclip' ;
+     if ($adj == 'si') {
+      //controlamos ruta de documentos adjuntos.
+        return 'glyphicon glyphicon-paperclip' ;
+     }
+
+   
 
 }
 

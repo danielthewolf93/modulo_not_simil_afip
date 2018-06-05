@@ -38,6 +38,12 @@ Route::get('/visualizacioncont/{id_notific}','VisualisConController@delete_not')
 
 Route::get('C:/wamp/www/prueba3/public/storage/{id_notific}','VisualisConController@traerpdf')->name('pdf_get');
 
+
+
+//Generar pdf
+Route::get('/visualizacioncont/mensaje/cuit/modelo/{id_modelo}'
+    ,'VisualisConController@imprimir_msj')->name('imprimir_msj');
+
  // Route::get('crear-obra/{id}', ['as' => 'crear_obra', 'uses' => 'ObrasController@create']);
 
 
