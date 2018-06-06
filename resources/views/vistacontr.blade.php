@@ -27,9 +27,9 @@
 <br>
 
 <h1><i &nbsp class="fa fa-address-card" ></i>&nbspJuan Perez</h1> 
-<h3>&nbsp&nbspAvisos</h3>
-<h3>&nbsp&nbsp  Sin leer <a href="{{ route('visualcon') }}">{{ count ($notificacionesnleidas) }}</a>  |  Leidos  <a href="{{ route('visualcon') }}">{{ count ($notifleid) }}</a>  </h3>
-<h3>&nbsp&nbsp  Archivados    <a href="{{ route('baul')}}">{{ count($notifborradas)  }}</a>  </h3> 
+<h3>&nbsp&nbsp <i class="glyphicon glyphicon-bell"> </i> <a href="{{ route('visualcon') }}"> Avisos </a>  </h3>
+<h3>&nbsp&nbsp  Sin leer <a href="{{ route('visualcon') }}"> <span class="badge">{{ count($notificacionesnleidas)  }}</span></a>  |  Leidos  <a href="{{ route('visualcon') }}"><span class="badge">{{ count($notifleid)  }}</span>       </a>  </h3>
+<h3>&nbsp&nbsp <i class="glyphicon glyphicon-inbox"> </i> <a href="{{ route('baul') }}"> Archivados  </a>     <a href="{{ route('baul')}}"><span class="badge">{{ count($notifborradas)  }}</span></a>  </h3> 
 <h3>&nbsp&nbsp&nbspCuit 20-37462532-3</h3>
 <br>
 <br>

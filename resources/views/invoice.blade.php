@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Example 2</title>
+    <title>Rentas Sfc</title>
 
     <link rel="stylesheet" type="text/css" href="../resources/assets/css/pdf.css">
    
@@ -14,9 +14,19 @@
         <div id="logo" >
         <img src="../resources/img/LogoRentas.png">
         </div>
+
+     @foreach ($mdtipos as $mtpo)
+      
+     @endforeach
+
+
+
+
         <div id="invoice">
           <h1>Rentas Sfc </h1>
-@foreach ($modeloInt as $mode)
+           <br>{{$mtpo->encabezado}}
+
+    @foreach ($modeloInt as $mode)
           <div class="date">Detalle: </div>
         </div>
       </div>
@@ -42,16 +52,20 @@
 
     @endforeach
 
-
         </tbody>
         <tfoot>
           <tr>
             <td colspan="2"></td>
             <td >TOTAL</td>
             <td>${{$import}}</td>
+            {{$mtpo->cuerpo}}
           </tr>
         </tfoot>
       </table>
+      <br><br><br>
+          {{$mtpo->pie_pagina}}
+
       @endforeach
+
   </body>
 </html>

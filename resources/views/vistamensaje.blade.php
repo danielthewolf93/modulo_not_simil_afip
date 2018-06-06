@@ -83,13 +83,11 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
      <div class="form-group">
 
   
-    <p> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+@foreach($modeltip as $mtipo)
+
+    <p> {{ $mtipo->encabezado }}  </p>
+   
+@endforeach
 
   <div class="contener">
   
@@ -142,17 +140,12 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
     </tbody>
     </table>
       
-      <p> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+      <p> {{ $mtipo->cuerpo }} </p>
+    
 
     <br>
 
-            <p>----------------</p>
+            <p>{{ $mtipo->pie_pagina }}</p>
       
     <br>
 
@@ -165,17 +158,6 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
    <a href="{{ route('imprimir_msj',[$mode->id]) }}" class="btn btn-success" >Imprimir</a> 
 
    <br>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

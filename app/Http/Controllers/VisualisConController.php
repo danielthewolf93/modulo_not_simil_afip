@@ -14,6 +14,8 @@ use PDF;
 
 use App;
 
+use App\ModelTipo;
+
 use App\ModelDetalle;
 
 use Illuminate\Support\Facades\Input;
@@ -104,9 +106,6 @@ public function cuerpo_msj($id_mensaje,$id_recept)
 	*/
 
 
-
-
-
 	$inputs=Input::all();
 
 	//$mensaje= $req['id_notific'];
@@ -174,8 +173,17 @@ public function cuerpo_msj($id_mensaje,$id_recept)
 
        	$modeloIntDet= ModelDetalle::where('idmodelo','=',$not->adjunto)->where("estado_mdetalle",'=','guardado')->get();
 
-     	$datos_pruebamod = "Modelo:3,periodo,etc,etc";
-     	return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesleidas','datos_pruebamod','modeloInt','modeloIntDet'));
+
+        foreach ($modeloInt as $mdtipo) {
+          
+          $tip_mod = $mdtipo->tipo_modelo;
+
+        }
+
+        $modeltip= ModelTipo::where('id_tipo_model','=',$tip_mod)->get();
+
+
+     	return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesleidas','modeloInt','modeloIntDet','modeltip'));
      }
 
 
@@ -255,16 +263,26 @@ public function imprimir_msj($id_modelo)
 
    		}
 
+   		foreach ($modeloInt as $m ) {
+   			
+   			$cuitc= $m->cuit_contrib;
+        $id_tip= $m->tipo_modelo;
 
+   		}
 
-   		$view =  view('invoice', compact('id_mensaje','notificaciones','notificacionesleidas','datos_pruebamod','modeloInt','modeloIntDet','import'))->render();
+   		
+      $mdtipos = ModelTipo::where('id_tipo_model','=',$id_tip)->get();
+
+   		
+   		$view =  view('invoice', compact('id_mensaje','notificaciones','notificacionesleidas','datos_pruebamod','modeloInt','modeloIntDet','import','mdtipos'))->render();
 
         $pdf = App::make('dompdf.wrapper');
 
         $pdf->loadHTML($view);
         
-        return $pdf->download('intimacion_cuit.pdf');
+       // return $pdf->download('intimacion_cuit.pdf');
 
+        return $pdf->download("intim.$cuitc.pdf");
 
         //para solo descargar
         //        return $pdf->stream('invoice');
