@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Database\Eloquent\Collection;
+
 use App\Http\Requests;
 
 use App\Notificaciones;
@@ -17,6 +19,8 @@ use App;
 use App\ModelTipo;
 
 use App\ModelDetalle;
+
+use App\movimientos_cont;
 
 use Illuminate\Support\Facades\Input;
 
@@ -145,6 +149,15 @@ public function cuerpo_msj($id_mensaje,$id_recept)
       	$affectedRows = Notificaciones::where('id_notific','=',$id_mensaje)->update(['notif_estado' => 'leido']);
 
 
+          $modeldet= movimientos_cont::create([
+
+           'mov_descripcion' => 'Mensaje leìdo',
+           'id_notificac' => $id_mensaje,
+
+
+            ]);
+
+
         }
 
 
@@ -251,6 +264,10 @@ public function imprimir_msj($id_modelo)
 		$modeloInt= Modelos::where('id','=',$id_modelo)->get();
 
 
+
+
+
+
        	//ver si hace falta guardar los detalles es decir en vez de hacer la baja logica aplicar una fisica ...
 
        	$modeloIntDet= ModelDetalle::where('idmodelo','=',$id_modelo)->where("estado_mdetalle",'=','guardado')->get();
@@ -273,6 +290,36 @@ public function imprimir_msj($id_modelo)
    		
       $mdtipos = ModelTipo::where('id_tipo_model','=',$id_tip)->get();
 
+
+//insertamos registro en la base de datos mov_contribuyente ---Para luego tener el historial.
+//------------------------------------------------------------------------------------------.
+//------------------------------------------------------------------------------------------.
+
+    
+
+
+      $notif = Notificaciones::where('adjunto','=',$id_modelo)->get();
+
+
+      foreach ($notif as $nt ) {
+        
+         $id_noti = $nt->id_notific;
+
+      }
+     
+
+    $modeldet= movimientos_cont::create([
+
+    'cuit' =>  $cuitc,
+    'mov_descripcion' => 'Modelo intimacion descargado',
+    'id_notificac' => $id_noti,
+
+
+  ]);
+
+
+
+//-------------------------------------------------------------------------------
    		
    		$view =  view('invoice', compact('id_mensaje','notificaciones','notificacionesleidas','datos_pruebamod','modeloInt','modeloIntDet','import','mdtipos'))->render();
 
