@@ -64,18 +64,41 @@
                       </div>
 
 
+ <div class="contener">
+
+
 
 <table class="table">
+
     <thead>
+
       <tr>
+		
+        <th>Inscripc/Matricula</th>
+        <th>Periodo</th>
+        <th>Tributo</th>
+        <th>Monto</th>
         <th></th>
-        <th><i &nbsp class="glyphicon glyphicon-paperclip" ></i></th>
-      	<th>Fecha</th>
-        <th>Tema</th>
-        <th>Despacho</th>
-        <th>Contribuyente</th>
         
       </tr>
+	  
+	<tr> 
+	    <th>000000012412</th>
+	    <th>04/2018 </th>
+	    <th>5454</th>
+	    <th>$1879</th>
+	    <th><a href="" class="btn btn-danger" >X</a></th>
+    </tr>
+
+<tr> 
+	    <th>000000012412</th>
+	    <th>04/2018 </th>
+	    <th>5454</th>
+	    <th>$1879</th>
+	    <th><a href="" class="btn btn-danger" >X</a></th>
+    </tr>
+
+
     </thead>
     <tbody>
 		
