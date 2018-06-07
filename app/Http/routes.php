@@ -104,11 +104,15 @@ return view('modelo3');
 Route::get('formulario','StoreController@index')->name('formulario');*/
 
 
+//Modelos de intimaciones
 
 Route::get('/intim','IntimController@index')->name('intim');
 
 
-Route::get('/intim/id_modelo/cuit/','IntimController@agregar')->name('agregar_model_list');
+//Route::get('/intim/modelo_tipo/{modelo_tipo?}/cuit/{cuit?}','IntimController@agregar')->name('agregar_model_list');
+
+Route::get('/intims','IntimController@agreg')->name('intims');
+//---------------------------------------------------------
 
 
 //Lista de Modelos
