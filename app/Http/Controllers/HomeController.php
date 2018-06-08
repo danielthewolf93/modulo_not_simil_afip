@@ -115,10 +115,18 @@ class HomeController extends Controller
 
         ]);
 
+          //  echo "<script> alert('Tu mensaje fue enviado'); </script>";
 
-          return back()->with('flash','Tu mensaje fue enviado');
+         return back()->with('flash','Tu mensaje fue enviado');
+
+         //return $request->session()->flash('status', 'Task was successful!');
 
 
+/*
+        Session::flash('message', "Special message goes here");
+        return Redirect::back();
+
+*/
      
         //return $request->all();
         

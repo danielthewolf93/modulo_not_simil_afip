@@ -9,7 +9,7 @@
 
 </head>
 <body>
-
+    {{  $request->session()->flash('status', 'Task was successful!'); }}
 
 	             <form method="POST" action="{{ route('home')}}" class="form-control" enctype="multipart/form-data" onsubmit="return validacions()">
                     {{ csrf_field() }}

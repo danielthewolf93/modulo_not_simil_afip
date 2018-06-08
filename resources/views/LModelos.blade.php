@@ -24,7 +24,7 @@
 
  
 
-@if ( count($modelos)==0 )  
+@if ( count($listamodel)==0 )  
 <p>&nbsp &nbsp No tiene Modelos creados </p>
 
 @else
@@ -33,13 +33,13 @@
 	<table class="table">
     <thead>
       <tr>
-        
+        <th>Identificador</th>
       	<th>Fecha Creacion</th>
-      	<th>Tipo Modelo</th>
-      	<th>Tributo</th>
-      	<th>Periodo Elegido</th>
+      	
         <th>Contribuyente</th>
+        <th>Tipo Modelo</th>
         <th>Estado</th>
+        <th></th>
         <th></th>
 
         
@@ -52,16 +52,20 @@
 
 	<tr>
 		
-			
+		<th>{{ $model->id }}</th>	
 		<th>{{ $model->created_at }}</th>
-		<th>{{ $model->tipo_modelo }} </th>
-		<th>{{ $model->tributo }}</th>
-		<th>{{ $model->periodo }}</th>
 		<th>{{ $model->cuit_contrib }}</th>
+		<th>{{ $model->tipo_modelo }} </th>
+	
 		<th>{{ $model->estado }}</th>
+		
+		<th> <a href="{{ route('visualizar_modelo',[$model->id]) }}" class="btn btn-primary" target="_blank">Ver</a> </th>
+
 		<th><a href="" class="btn btn-warning">Editar</a></th>
+
 		<th><a href="" class="btn btn-success">Enviar</a></th>
-		<th><a href="" class="btn btn-danger">X</a></th>
+
+		<th><a href="{{ route('delete_not_list',[$model->id]) }}" class="btn btn-danger">X</a></th>
 		
 
 		

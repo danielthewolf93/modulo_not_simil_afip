@@ -10,11 +10,11 @@ use App\Http\Requests;
 
 use App\Notificaciones;
 
-use App\Modelos;
-
 use PDF;
 
 use App;
+
+use App\Modelos;
 
 use App\ModelTipo;
 

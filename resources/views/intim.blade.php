@@ -14,42 +14,27 @@
 
 								<div class="panel-body">
 											
-											@if(isset($cuit)==true)
-											
-											<p><strong> Modelo Elegido : </strong> {{ $modelo_tipo }}</p>
 
-											@endif
 
-										@if(isset($cuit)==false)
-											
+									
 											<div class="form-group">
 	 									    <label class="form-group">Modelo de Intimacion</label>
 		                                    <select class="form-control" name="modeloform" id="modeloform">
 		                                    <option value="1">Modelo 1</option>
 		                                    <option value="2">Modelo 2</option>    
-		                                    <option value="3">Modelo 3</option>
+		                                    <option value="3">Modelo 3</option>   
 		                                    </select>
 	                                		</div>
 
-											@endif	
-
- 								   @if(isset($cuit)==false)
 									
+ 						
 									<label class="form-group">Cuit</label>
 									<div class="form-group">
 										<input type="text" name="cuit" id="cuit" placeholder="cuit_contribuyente" maxlength="11">
 									</div>
 									
-									@endif	
 
-										@if(isset($cuit)==true)
-											
-											<p><strong> Cuit :</strong>{{ $cuit }}</p>
-
-											@endif
-
-									
-
+				
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
 										<select name="matricula">
@@ -64,12 +49,18 @@
 									<div class="form-group">
 										<input type="text" name="tributo" id="tributo" placeholder="tributo" maxlength="4">
 									</div>
+									
+									
+
+									<input type="hidden" name="fecha_creac" value="{{  date('Y-m-d') }}">
 
 
 									<label class="form-group">Fecha Periodo</label>
                                 	 <div class="form-group">
                                 	 	<input type="date" name="fecha_hoy" >
 									</div>	
+
+									<input type="hidden" name="importe_tributo" value="">
 									
 									<div class="form-group">
 
@@ -77,6 +68,12 @@
 								
 			
 									<a href="{{ route('intims')}}" class="btn btn-success">+1</a>
+
+									<input type="submit" name="envio" class="btn btn-primary " value="+++1" >
+
+
+									<a href="{{ route('intimsss',[544]) }}" class="btn btn-success" action=>+1</a>
+
 
 									<a href="{{ route('lista_modelos') }}" class="btn btn-primary" >Listar Modelos Creados</a>
 

@@ -16,10 +16,10 @@
 											
 											
 											
-											<p><strong> Modelo Elegido : </strong> 1</p>
+											<p><strong> Modelo Elegido : </strong> {{ $mode }}</p>
 											
-											<p><strong> Cuit :</strong>20374625323</p>
-
+											<p><strong> Cuit :</strong>{{ $cuit }}</p>
+<br>	ID:{{ $id_tabla }}
 
 									<label class="form-group">Matricula</label>
 									<div class="form-group">

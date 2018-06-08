@@ -7,6 +7,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Enviar mensaje</div>
 
+
+
+
+                @if (Session::has('message'))
+                   <div class="alert alert-info">{{ Session::get('message') }}</div>
+                @endif
+
+
+
+
+
                 <form method="POST" action="{{ route('messages.store')}}" enctype="multipart/form-data">
                     {{ csrf_field() }}
 

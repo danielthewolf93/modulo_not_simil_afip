@@ -112,6 +112,10 @@ Route::get('/intim','IntimController@index')->name('intim');
 //Route::get('/intim/modelo_tipo/{modelo_tipo?}/cuit/{cuit?}','IntimController@agregar')->name('agregar_model_list');
 
 Route::get('/intims','IntimController@agreg')->name('intims');
+
+
+
+Route::post('/intimsss','IntimController@agreg2')->name('intimsss');
 //---------------------------------------------------------
 
 
@@ -128,6 +132,8 @@ Route::get('/formulario','StoreController@index')->name('formul');
 //ruta que procesa los datos
 
 Route::post('/prueba3/public/storage/create', 'StoreController@guardar')->name('proces');
+
+
 
 
 
@@ -157,6 +163,8 @@ Route::get('storage/{archivo}', function ($archivo) {
 });
 
 Route::get('/borrado','StoreController@borrar')->name('borrar_arch');
+
+
 
 //Route::get('/prueba3/public/storage/create','StoreController@mostrar');
 
@@ -199,3 +207,14 @@ Route::post('/form', 'FormController@store')->name('formus');
 
 
 /*---Hacer 2 :layouts 1 para los contribuyentes y otro para los empleados normales. */
+
+
+
+//--Rutas de Lista de Modelos---
+//
+Route::get('/lista_modelos/{id_mod}','LModelosController@delete_not')->name('delete_not_list');
+
+
+//Generar pdf
+Route::get('/lista_modelos/modelo/{id_modelo}'
+    ,'LModelosController@visualizar_pdf_mod')->name('visualizar_modelo');
