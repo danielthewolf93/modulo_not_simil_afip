@@ -145,7 +145,16 @@ public function agregartribut(Request $req)
 
     $dato5=$req->input('_importe');
 
-    $dato6=$req->input('fecha');
+
+
+    
+
+    $dato6=$req->input('_fecha');
+
+
+
+    $periodo = date('m/Y',strtotime(str_replace('-','/',$dato6)));
+
 
     //guardar todo esto en el modelo y en la lista de modelos detalles...
     //relacionar todo esto
@@ -154,7 +163,7 @@ public function agregartribut(Request $req)
 
     
 
-      return Response::json($dato2);
+      return Response::json($periodo);
             
 
 

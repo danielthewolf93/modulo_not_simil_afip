@@ -74,7 +74,7 @@
 
 									<label class="form-group">Fecha Periodo</label>
                                 	 <div class="form-group">
-                                	 	<input type="date" name="fecha_hoy" >
+                                	 	<input type="date" name="fecha_hoy" id="fecha_hoy" >
 									</div>	
 									
 
@@ -248,6 +248,14 @@ function masuno()
 
 	var modelofo = $('#auxmodel').val();
 
+	var matricula = $('#matricula').val();
+
+	var tributo = $('#tributo').val();
+
+	var importe = $('#import').val();
+
+	var fecha = $('#fecha_hoy').val();
+
 	$.ajax({
 
 			
@@ -255,7 +263,7 @@ function masuno()
 		//	data: "cuit="+cuit+"&_token={{-- csrf_token()--}}",
 
 
-			data: "cuit="+cuit+"&_modelofo="+modelofo+"&_token={{ csrf_token()}}",
+			data: "cuit="+cuit+"&_modelofo="+modelofo+"&_matricula="+matricula+"&_tributo="+tributo+"&_importe="+importe+"&_fecha="+fecha+"&_token={{ csrf_token()}}",
 
 
 			dataType: "json",
