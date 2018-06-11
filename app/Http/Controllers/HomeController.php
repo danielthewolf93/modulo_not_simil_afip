@@ -174,7 +174,9 @@ class HomeController extends Controller
         if ( $mode==2) {
 
 
-           return view('modelo2',compact('mode','cuit','matricula','fecha','tributo'));
+           $importes = Input::get('import');
+
+           return view('modelo2',compact('mode','cuit','matricula','fecha','tributo','periodo','importes'));
        
         }
 

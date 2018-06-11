@@ -57,35 +57,15 @@
 	<tr>
 		
 			
-		<th>000000065544</th>
-		<th>05/2018 </th>
-		<th>5512</th>
-		<th>$771</th>
+		<th>{{ $matricula }}</th>
+		<th>{{ $periodo }} </th>
+		<th>{{ $tributo }}</th>
+		<th>${{ $importes }}</th>
 		
 
 	</tr>
 
-	<tr>
-		
-			
-		<th>000000063333</th>
-		<th>06/2018 </th>
-		<th>5512</th>
-		<th>$8768</th>
-		
-
-	</tr>
-
-		<tr>
-		
-			
-		<th>000000099999</th>
-		<th>07/2018 </th>
-		<th>1156</th>
-		<th>$10000</th>
-		
-
-	</tr>
+	
 
 
 

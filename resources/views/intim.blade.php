@@ -19,7 +19,7 @@
 									
 											<div class="form-group">
 	 									    <label class="form-group">Modelo de Intimacion</label>
-		                                    <select class="form-control" name="modeloform" id="modeloform">
+		                                    <select class="form-control" name="modeloform" id="modeloform"  onchange="controlarmod()" >
 		                                    <option value="1">Modelo 1</option>
 		                                    <option value="2">Modelo 2</option>    
 		                                    <option value="3">Modelo 3</option>   
@@ -40,7 +40,7 @@
 				
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
-										<select name="matricula" id="matricula">
+										<select name="matricula" id="matricula" >
 											
 											<option value="1">Matricula1</option>
 											<option value="2">Matricula2</option>
@@ -50,10 +50,24 @@
 									
 									<label class="form-group">Tributo</label>
 									<div class="form-group">
-										<input type="text" name="tributo" id="tributo" placeholder="tributo" maxlength="4">
+										<input type="text" name="tributo" id="tributo" placeholder="tributo" maxlength="4" style="display:"";">
 									</div>
 									
 									
+									<div id="importe" style="display: none;">
+										
+
+									<label>Importe</label>	<br>
+
+								<input type="text" name="import" id="import" placeholder="Importe" maxlength="7" ><br><br>
+
+
+
+
+
+
+									</div>
+
 
 									<input type="hidden" name="fecha_creac" value="{{  date('Y-m-d') }}">
 
@@ -62,6 +76,8 @@
                                 	 <div class="form-group">
                                 	 	<input type="date" name="fecha_hoy" >
 									</div>	
+									
+
 
 									<input type="hidden" name="importe_tributo" value="">
 									
@@ -172,5 +188,38 @@ function autocompletar() {
 
 
 </script>
+
+<script type="text/javascript">
+	
+
+
+function controlarmod()
+{
+
+	div21=document.getElementById('modeloform').value;
+
+	if (div21==2) {
+
+		 div2=document.getElementById('importe');
+    	 div2.style.display = '';
+
+	}
+
+	else
+
+	{
+		div2=document.getElementById('importe');
+    	 div2.style.display = 'none';
+	}
+		
+	
+
+}
+
+
+
+
+</script>
+
 
 @endsection
