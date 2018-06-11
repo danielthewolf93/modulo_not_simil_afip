@@ -128,6 +128,45 @@ class IntimController extends Controller
 
     }
 
+public function agregartribut(Request $req)
+{
+    
+
+    //controlar esto depende de que modelo es los datos que va a guardar y segun eso mostrar el immporte
+
+
+    $dato=$req->input('cuit');
+
+    $dato2=$req->input('_modelofo');
+
+    $dato3=$req->input('_matricula');
+
+    $dato4=$req->input('_tributo');
+
+    $dato5=$req->input('_importe');
+
+    $dato6=$req->input('fecha');
+
+    //guardar todo esto en el modelo y en la lista de modelos detalles...
+    //relacionar todo esto
+    //y luego ver q devolver.
+    //lo ultimo
+
+    
+
+      return Response::json($dato2);
+            
+
+
+}
+
+
+
+
+
+
+
+
 
     public function agreg(Request $req)
     {

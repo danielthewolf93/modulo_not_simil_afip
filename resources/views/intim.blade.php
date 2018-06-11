@@ -238,21 +238,54 @@ function masuno()
 	//div1=document.getElementById('modeloform');
 
 
-	
-
-
-	
-
-
-	
-
-
-
 
 	document.getElementById('modeloform').disabled = true;
 
 
 	$('#cuit').attr("disabled", true);
+
+	var cuit = $('#auxcuit').val();
+
+	var modelofo = $('#auxmodel').val();
+
+	$.ajax({
+
+			
+			url: "{{ route('agregar_tribut')}}",
+		//	data: "cuit="+cuit+"&_token={{-- csrf_token()--}}",
+
+
+			data: "cuit="+cuit+"&_modelofo="+modelofo+"&_token={{ csrf_token()}}",
+
+
+			dataType: "json",
+			method: "POST",
+			success:function(data){
+
+					// document.getElementById('auxcuit').value = $('#cuit').val();
+
+
+		document.getElementById('tributo').value = data;
+
+						}
+
+
+				
+			
+
+		});
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	//div1.style.display = 'none';

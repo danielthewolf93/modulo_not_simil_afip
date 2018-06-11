@@ -224,3 +224,7 @@ Route::get('/lista_modelos/modelo/{id_modelo}'
 //para los cuit traer y seleccionar para cargar un select de matriculas
 
 Route::post('/intimls','IntimController@agregarcuit')->name('cuit_ruta');
+
+
+
+Route::post('/intim','IntimController@agregartribut')->name('agregar_tribut');
