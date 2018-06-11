@@ -19,7 +19,7 @@
 									
 											<div class="form-group">
 	 									    <label class="form-group">Modelo de Intimacion</label>
-		                                    <select class="form-control" name="modeloform" id="modeloform"  onchange="controlarmod()" >
+		                                    <select class="form-control" name="modeloform" id="modeloform"  onclick="controlarmod()" >
 		                                    <option value="1">Modelo 1</option>
 		                                    <option value="2">Modelo 2</option>    
 		                                    <option value="3">Modelo 3</option>   
@@ -27,6 +27,8 @@
 	                                		</div>
 
 									
+									<input type="hidden" name="auxmodel" id="auxmodel" value="">
+
  									<input class="form-control" type="hidden" name="id" id="id" ><!--campo que recibirá el id-->
 
 									<label class="form-group">Cuit</label>
@@ -35,16 +37,14 @@
 									</div>
 									<ul id="lista" ></ul>
 
-									
+									<input type="hidden" name="auxcuit" id="auxcuit" value="">
 
 				
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
 										<select name="matricula" id="matricula" >
 											
-											<option value="1">Matricula1</option>
-											<option value="2">Matricula2</option>
-											<option value="3">Matricula3</option>
+										
 										</select>
 									</div>
 									
@@ -59,7 +59,7 @@
 
 									<label>Importe</label>	<br>
 
-								<input type="text" name="import" id="import" placeholder="Importe" maxlength="7" ><br><br>
+								$<input type="text" name="import" id="import"  maxlength="7" ><br><br>
 
 
 
@@ -86,12 +86,10 @@
 									<input type="submit" name="envio" class="btn btn-primary " value="Generar Modelo" >
 								
 			
-									<a href="{{ route('intims')}}" class="btn btn-success">+1</a>
-
-									<input type="submit" name="envio" class="btn btn-primary " value="+++1" >
+								
 
 
-									<a href="{{ route('intimsss',[544]) }}" class="btn btn-success" action=>+1</a>
+									<a  class="btn btn-success" onclick="masuno()">+1</a>
 
 
 									<a href="{{ route('lista_modelos') }}" class="btn btn-primary" >Listar Modelos Creados</a>
@@ -149,9 +147,6 @@ function autocompletar() {
 
 	var min_length = 11; // variable length
 	var cuit = $('#cuit').val();//obtener el nombre y/o termino de busqeuda
-	//$('#matricula').empty();
-	//$('#matricula').children().remove();
-
 	if (cuit.length >= min_length) {
 		$.ajax({
 
@@ -161,10 +156,16 @@ function autocompletar() {
 			dataType: "json",
 			method: "POST",
 			success:function(data){
+
+					 document.getElementById('auxcuit').value = $('#cuit').val();
+
+
 					$('#matricula').empty();
+
+
 				$.each(data, function(i, item) {
 			
-				//20069524959
+				
 
 				  $('#matricula')
 		         .append($("<option></option>")
@@ -198,6 +199,9 @@ function controlarmod()
 
 	div21=document.getElementById('modeloform').value;
 
+	document.getElementById('auxmodel').value = div21;
+
+
 	if (div21==2) {
 
 		 div2=document.getElementById('importe');
@@ -216,6 +220,48 @@ function controlarmod()
 
 }
 
+
+
+
+</script>
+
+
+<script type="text/javascript">
+	
+
+function masuno()
+
+
+{
+
+
+	//div1=document.getElementById('modeloform');
+
+
+	
+
+
+	
+
+
+	
+
+
+
+
+	document.getElementById('modeloform').disabled = true;
+
+
+	$('#cuit').attr("disabled", true);
+
+
+	//div1.style.display = 'none';
+
+
+
+
+
+}
 
 
 

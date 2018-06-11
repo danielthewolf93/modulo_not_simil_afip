@@ -147,12 +147,34 @@ class HomeController extends Controller
        //
        //$name = Input::get('name');
 
-        
+       
+
+
+
 
 
        $mode= Input::get('modeloform');
 
+
+       if ($mode==null) {
+           
+            $mode= Input::get('auxmodel');
+
+       }
+
+
        $cuit= Input::get('cuit');
+
+
+       if ($cuit==null) {
+
+
+           $cuit= Input::get('auxcuit');
+           
+       }
+
+
+       
 
        $matricula= Input::get('matricula');
 
