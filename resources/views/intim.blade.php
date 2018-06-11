@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 
-@section('content')				
-<div class="container">
+@section('content')
+	<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -27,17 +27,20 @@
 	                                		</div>
 
 									
- 						
+ 									<input class="form-control" type="hidden" name="id" id="id" ><!--campo que recibirá el id-->
+
 									<label class="form-group">Cuit</label>
 									<div class="form-group">
-										<input type="text" name="cuit" id="cuit" placeholder="cuit_contribuyente" maxlength="11">
+										<input type="text" name="cuit" id="cuit" placeholder="cuit_contribuyente" maxlength="11" onkeyup="autocompletar()">
 									</div>
+									<ul id="lista" ></ul>
+
 									
 
 				
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
-										<select name="matricula">
+										<select name="matricula" id="matricula">
 											
 											<option value="1">Matricula1</option>
 											<option value="2">Matricula2</option>
@@ -120,4 +123,58 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript"></script>
+
+<script type="text/javascript">
+	
+function autocompletar() {
+
+
+	var min_length = 11; // variable length
+	var cuit = $('#cuit').val();//obtener el nombre y/o termino de busqeuda
+	$('#matricula').empty();
+	if (cuit.length >= min_length) {
+		$.ajax({
+
+			
+			url: "{{ route('cuit_ruta')}}",
+			data: "cuit="+cuit+"&_token={{ csrf_token()}}",
+			dataType: "json",
+			method: "POST",
+			success:function(data){
+				$.each(data, function(i, item) {
+				//alert(data[i].pad_ente);
+				//$('#lista').append(data[i].pad_ente);
+				
+				//20069524959
+
+				  $('#matricula')
+		         .append($("<option></option>")
+		         .attr("value",data[i].pad_nomenclatura)
+		         .text(data[i].pad_nomenclatura));
+
+/*
+				$('#lista').show();//mistrar la lista
+				$('#lista').html(data[i].pad_ente);//mostrar resultado de consulta en la lista
+			
+*/
+				});
+
+
+				
+			}
+
+		});
+	} else {
+		$('#lista').hide();
+	}
+}
+
+
+
+
+
+</script>
+
 @endsection

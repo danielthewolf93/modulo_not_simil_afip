@@ -218,3 +218,9 @@ Route::get('/lista_modelos/{id_mod}','LModelosController@delete_not')->name('del
 //Generar pdf
 Route::get('/lista_modelos/modelo/{id_modelo}'
     ,'LModelosController@visualizar_pdf_mod')->name('visualizar_modelo');
+
+
+
+//para los cuit traer y seleccionar para cargar un select de matriculas
+
+Route::post('/intimls','IntimController@agregarcuit')->name('cuit_ruta');

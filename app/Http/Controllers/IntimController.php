@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Response;
 
 use Illuminate\Http\Request;
 
 use App\User;
+
+use App\rm_padron6;
 
 use App\Message;
 
@@ -18,6 +21,8 @@ use Illuminate\Database\Eloquent\Collection;
 use App\Modelos;
 
 use App\ModelTipo;
+
+
 
 
 
@@ -80,6 +85,53 @@ class IntimController extends Controller
         //con el modelo y cuit elegido.
 
         return view('intim');
+
+    }
+
+    public function agregarcuit(Request $req)
+    {
+        
+            $dato=$req->input('cuit');
+
+            $dat="Cuit no encontrado";
+
+            $ent ="Cuit no encontrado";
+
+            $pd_nom ="Cuit no encontrado";
+
+            $contrib_nomen ="Cuit no encontrado";
+
+                   // $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'=','guardado')->get();
+
+
+            $contrib = rm_padron6::where('pad_cuit_index','=',$dato)->get();
+
+
+             $contrib_nomen = rm_padron6::where('pad_cuit_index','=',$dato)->get();
+
+           //20069524959
+           //
+           //
+                
+               if (sizeof($contrib_nomen)==0) {
+
+                $contrib_nomen="Cuit no encontrado";
+               }
+
+
+
+
+            if ($contrib!=null) {
+
+                foreach ($contrib as $con ) {
+
+               $dat= $con->pad_nombre_propietario;
+               $ent= $con->pad_ente;
+               $pd_nom = $con->pad_nomenclatura;
+            }
+             return Response::json($contrib_nomen);
+            }
+
 
     }
 
