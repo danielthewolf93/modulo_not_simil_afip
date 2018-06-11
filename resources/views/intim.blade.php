@@ -133,7 +133,9 @@ function autocompletar() {
 
 	var min_length = 11; // variable length
 	var cuit = $('#cuit').val();//obtener el nombre y/o termino de busqeuda
-	$('#matricula').empty();
+	//$('#matricula').empty();
+	//$('#matricula').children().remove();
+
 	if (cuit.length >= min_length) {
 		$.ajax({
 
@@ -143,10 +145,9 @@ function autocompletar() {
 			dataType: "json",
 			method: "POST",
 			success:function(data){
+					$('#matricula').empty();
 				$.each(data, function(i, item) {
-				//alert(data[i].pad_ente);
-				//$('#lista').append(data[i].pad_ente);
-				
+			
 				//20069524959
 
 				  $('#matricula')
@@ -154,16 +155,11 @@ function autocompletar() {
 		         .attr("value",data[i].pad_nomenclatura)
 		         .text(data[i].pad_nomenclatura));
 
-/*
-				$('#lista').show();//mistrar la lista
-				$('#lista').html(data[i].pad_ente);//mostrar resultado de consulta en la lista
-			
-*/
-				});
+				});}
 
 
 				
-			}
+			
 
 		});
 	} else {

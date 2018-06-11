@@ -104,7 +104,7 @@ class IntimController extends Controller
                    // $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'=','guardado')->get();
 
 
-            $contrib = rm_padron6::where('pad_cuit_index','=',$dato)->get();
+          //  $contrib = rm_padron6::where('pad_cuit_index','=',$dato)->get();
 
 
              $contrib_nomen = rm_padron6::where('pad_cuit_index','=',$dato)->get();
@@ -121,16 +121,9 @@ class IntimController extends Controller
 
 
 
-            if ($contrib!=null) {
-
-                foreach ($contrib as $con ) {
-
-               $dat= $con->pad_nombre_propietario;
-               $ent= $con->pad_ente;
-               $pd_nom = $con->pad_nomenclatura;
-            }
+          
              return Response::json($contrib_nomen);
-            }
+            
 
 
     }
