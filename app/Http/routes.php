@@ -233,3 +233,13 @@ Route::post('/intim','IntimController@agregartribut')->name('agregar_tribut');
 
 
 Route::post('/intim/intimsas','IntimController@masuno_serv')->name('masuno_serv');
+
+
+Route::post('intim/masdeuno','IntimController@mas')->name('mas');
+
+
+
+Route::get('intimacion/prueba','IntimController@prueba')->name('prueb');
+
+
+Route::post('intimacion/pruebas','IntimController@p_agregar')->name('prueb_agreg');

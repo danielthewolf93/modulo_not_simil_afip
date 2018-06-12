@@ -95,7 +95,14 @@
 									<a href="{{ route('masuno_serv') }}" class="btn btn-success">+1serv</a>
 
 
+
+
+
 									<a href="{{ route('lista_modelos') }}" class="btn btn-primary" >Listar Modelos Creados</a>
+		
+
+									
+									<a href="{{ route('prueb')}}" class="btn btn-success">prueb</a>
 
 
 

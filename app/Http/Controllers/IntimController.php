@@ -48,6 +48,25 @@ class IntimController extends Controller
     }
 
 
+
+
+public function mas(Request $req)
+{
+    
+    echo "Modelo Guardado";
+
+    return back();
+
+}
+
+
+
+
+
+
+
+
+
     public function agregar($id_mensaje,$id_recept)
     {
 
@@ -279,7 +298,170 @@ public function masuno_serv(Request $req)
 }
 
 
+//prueba para ver de agregar la lista de detalles de modelos para ir agregando
 
+public function prueba()
+{
+    
+
+    return view('prueb');
+
+}
+
+public function p_agregar(Request $req)
+{
+    
+    $va=0;
+
+    $va = $req->id_m;
+
+
+
+    if ($va>1) {
+
+
+        //agregamos detalles_modelos_del_modelo_que_est
+        //
+    
+
+    $fecha= Input::get('fecha_hoy');
+
+    $tributo= Input::get('tributo');
+
+    $periodo = date('m/Y',strtotime(str_replace('-','/',$fecha)));
+
+    $importe_tributo = Input::get('importe_tributo');
+
+    $matricula= Input::get('matricula');
+
+
+    $cuitcon = $req->cuit_m_det;
+    $model=$req->mod_det;
+    $id_tabla= $va;
+
+
+    $modeldet= ModelDetalle::create([
+
+        'idmodelo' =>       $id_tabla,
+        'tributo' =>        $tributo,//dentro del ente de tamño 4 de longitud es el tributo...pueden ser varios
+        'periodo' =>        $periodo,//mes y anio del dia elegido por el que lo intiman...pueden ser varios
+        'tipo_modelo' =>    $model,
+        'texto_1' =>        ' ',
+        'texto_2' =>        ' ',
+        'texto_3' =>        ' ',
+        'texto_4' =>        ' ',
+        'texto_5' =>        ' ',
+        'importe' =>        $importe_tributo,
+        'estado_mdetalle' => 'guardado',
+        'matricula_inscripcion' => $matricula,
+
+
+
+
+
+
+    ]);
+
+
+
+         $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'=','guardado')->get();
+
+
+          return view('prueb',compact('modeloIntDet','model','cuitcon','id_tabla'));
+
+    }
+
+    else{
+
+            //el modelo no esta creado y necesito crear y asociar el primer modelo_detalle
+
+         $mode= Input::get('modeloform');
+
+       $cuit= Input::get('cuit');
+
+       $matricula= Input::get('matricula');
+
+       $fecha_creac = Input::get('fecha_creac');
+
+       $fecha= Input::get('fecha_hoy');
+
+       $tributo= Input::get('tributo');
+
+       $periodo = date('m/Y',strtotime(str_replace('-','/',$fecha)));
+
+       $importe_tributo = Input::get('importe_tributo');
+
+        //-----------------------------
+ 
+
+
+
+        $model= Modelos::create([
+
+        //la fecha de envio no la tengo aca porque utiliozare las notificaciones
+        //en las cuales utilizo el campo adjunto como modelo y id mensaje lleva el id modelo para recuperar
+        //y mostrarlo desde la base de datos.
+
+        //'id_model_detall' =>  $id_tabla,
+        'estado' =>         'guardado',
+        'cuit_contrib' =>    $cuit,//pasar variables.
+        'id_personal' =>    auth()->id(),
+        'dia_cread' =>      $fecha_creac,
+        'dia_referenc' =>   $fecha,
+        'dia_mod' =>        $fecha_creac,
+        'matricula' =>      $matricula,//sacar esta matricula 
+        'tipo_modelo' =>    $mode,
+
+
+
+    ]);
+
+    $id_tabla=$model->id;
+
+
+    $modeldet= ModelDetalle::create([
+
+        'idmodelo' =>       $id_tabla,
+        'tributo' =>        $tributo,//dentro del ente de tamño 4 de longitud es el tributo...pueden ser varios
+        'periodo' =>        $periodo,//mes y anio del dia elegido por el que lo intiman...pueden ser varios
+        'tipo_modelo' =>    $mode,
+        'texto_1' =>        ' ',
+        'texto_2' =>        ' ',
+        'texto_3' =>        ' ',
+        'texto_4' =>        ' ',
+        'texto_5' =>        ' ',
+        'importe' =>        $importe_tributo,
+        'estado_mdetalle' => 'guardado',
+        'matricula_inscripcion' => $matricula,
+
+
+
+
+
+
+    ]);
+
+         $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'=','guardado')->get();
+
+        $model=$mode;
+
+        $cuitcon=$cuit;
+
+        return view('prueb',compact('modeloIntDet','id_tabla','model','cuitcon'));
+
+
+    }
+
+
+   
+
+
+
+
+  // return Redirect::('intimacion/prueba');
+}
+
+//-----------------------------------------------------------------------------
 
 
 
