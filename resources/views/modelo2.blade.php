@@ -11,11 +11,26 @@
 
 
 		<h1 style="position: center">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Modelo {{ $mode }}</h1>
+
+		<form action="{{ route('save_model') }}"  method="POST"  > 
+			{{ csrf_field() }}
+
 		<label for="">Fecha :</label>
 			 {{ date('d-m-Y') }}
 			<br>
 			<label for="">Cuit:</label>
 			  {{ $cuit }}
+	
+
+			<input type="hidden" name="model_cuit_cont" value="{{ $cuit }}">
+
+							<input type="hidden" name="model_fecha_creac" value="{{  date('Y-m-d') }}">
+
+										<input type="hidden" name="model_user" value="{{Auth::user()->id}}">
+
+
+
+
 
 		 <div class="form-group">
 
@@ -58,10 +73,37 @@
 		
 			
 		<th>{{ $matricula }}</th>
+		<input type="hidden" name="model_cuit_matr" value="{{  $matricula }}">
+
 		<th>{{ $periodo }} </th>
+		<input type="hidden" name="model_periodo" value="{{  $periodo }}">
+
 		<th>{{ $tributo }}</th>
+		<input type="hidden" name="model_tributo" value="{{  $tributo }}">
+
 		<th>${{ $importes }}</th>
-		
+
+		<input type="hidden" name="importe" value="{{ $importes }}">
+
+		<input type="hidden" name="model_tip" value="{{ $mode }}">
+
+		<input type="hidden" name="model_fecha_eleg" value="{{  $fecha }}">
+
+		<input type="hidden" name="model_periodo" value="{{  $periodo }}">
+
+		<input type="hidden" name="texto1" >
+
+		<input type="hidden" name="texto2" >
+
+		<input type="hidden" name="texto3" >
+
+		<input type="hidden" name="texto4" >
+
+		<input type="hidden" name="texto5" >
+
+		<input type="hidden" name="model_mode" value="{{  $mode }}">
+
+
 
 	</tr>
 
@@ -94,7 +136,10 @@
 
 			<a href="#" class="btn btn-primary ">Enviar</a>
   
-     
+     	  	<button type="submit" class="btn btn-success">Guardar 2</button>
+
+
+
      <a href="#" class="btn btn-primary ">Guardar</a>
 		
 	 <a href="{{ route('intim') }}" class="btn btn-primary ">Cancelar</a>

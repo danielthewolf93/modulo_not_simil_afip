@@ -92,6 +92,9 @@
 									<a  class="btn btn-success" onclick="masuno()">+1</a>
 
 
+									<a href="{{ route('masuno_serv') }}" class="btn btn-success">+1serv</a>
+
+
 									<a href="{{ route('lista_modelos') }}" class="btn btn-primary" >Listar Modelos Creados</a>
 
 
@@ -109,28 +112,51 @@
 
 
 
-@if(isset($cuits))	
+	
 
-{{ $cuits }}						
+						
 
-<table class="table">
+<table class="table" id="most" style="display: none;">
+
     <thead>
+
       <tr>
+		
+        <th>Inscripc/Matricula</th>
+        <th>Periodo</th>
+        <th>Tributo</th>
+        <th>Monto</th>
         <th></th>
-        <th><i &nbsp class="glyphicon glyphicon-paperclip" ></i></th>
-      	<th>Fecha</th>
-        <th>Tema</th>
-        <th>Despacho</th>
-        <th>Contribuyente</th>
         
       </tr>
+	  
+	<tr> 
+	    <th>000000012412</th>
+	    <th>04/2018 </th>
+	    <th>5454</th>
+	    <th>$1879</th>
+	    <th><a href="" class="btn btn-danger" >X</a></th>
+    </tr>
+
+<tr> 
+	    <th>000000012412</th>
+	    <th>04/2018 </th>
+	    <th>5454</th>
+	    <th>$1879</th>
+	    <th><a href="" class="btn btn-danger" >X</a></th>
+    </tr>
+
+
     </thead>
     <tbody>
 		
     </tbody>
   </table>
 
-@endif
+</div>
+
+
+
 
                  </form>
             </div>
@@ -242,7 +268,15 @@ function masuno()
 	document.getElementById('modeloform').disabled = true;
 
 
+
+
 	$('#cuit').attr("disabled", true);
+
+
+	
+	$('#most').attr("style.display ", "");
+
+
 
 	var cuit = $('#auxcuit').val();
 
@@ -272,9 +306,10 @@ function masuno()
 
 					// document.getElementById('auxcuit').value = $('#cuit').val();
 
+       
 
-		document.getElementById('tributo').value = data;
-
+					document.getElementById('tributo').value = data;
+		
 						}
 
 
@@ -288,6 +323,7 @@ function masuno()
 
 
 
+$("#most").load(" #most");
 
 
 
@@ -297,6 +333,7 @@ function masuno()
 
 
 	//div1.style.display = 'none';
+
 
 
 

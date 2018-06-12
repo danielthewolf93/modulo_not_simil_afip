@@ -116,6 +116,12 @@ class HomeController extends Controller
         ]);
 
           //  echo "<script> alert('Tu mensaje fue enviado'); </script>";
+          //  
+          //  
+            // echo "<script> alert('Modelo guardado'); </script>";
+
+
+             //return view('home');
 
          return back()->with('flash','Tu mensaje fue enviado');
 

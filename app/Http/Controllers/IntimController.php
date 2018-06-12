@@ -12,6 +12,8 @@ use App\rm_padron6;
 
 use App\Message;
 
+use App\ModelDetalle;
+
 use App\Notificaciones;
 
 use Illuminate\Support\Facades\Input;
@@ -36,7 +38,11 @@ class IntimController extends Controller
     {
     	
 
-    	return view('intim');
+
+
+        $mode="";
+
+    	return view('intim',compact('mode'));
 
 
     }
@@ -161,14 +167,116 @@ public function agregartribut(Request $req)
     //y luego ver q devolver.
     //lo ultimo
 
+
+
+    $modeldet= ModelDetalle::create([
+
+        'idmodelo' =>       999999,
+        'tributo' =>        $dato4,//dentro del ente de tamño 4 de longitud es el tributo...pueden ser varios
+        'periodo' =>        $periodo,//mes y anio del dia elegido por el que lo intiman...pueden ser varios
+        'tipo_modelo' =>    $dato2,
+        'texto_1' =>        "",
+        'texto_2' =>        "",
+        'texto_3' =>        "",
+        'texto_4' =>        "",
+        'texto_5' =>        "",
+        'importe' =>        $dato5,
+        'estado_mdetalle' => 'guardado',
+        'matricula_inscripcion' => $dato3,
+
+
+
+
+
+
+    ]);
+
+        $mode=$dato2;
+        $cuitt=$dato;
+        $id_tablass=999;
+
+
+
+    $modelos_det= ModelDetalle::where('idmodelo','=',999999)->where('estado_mdetalle','=','guardado')->get();
+
+
+
+
+    return view('imtim_1',compact('modelos_det','mode','cuitt','id_tablass'));
+
+    //return back(compact('modelos_det'));
+
     
 
-      return Response::json($periodo);
+      //return Response::json($periodo);
             
 
 
 }
 
+
+
+public function masuno_serv(Request $req)
+{
+    //+1 desde el lado del servidor...agregar detalle
+
+    $dato=$req->input('cuit');
+
+    $dato2=$req->input('_modelofo');
+
+    $dato3=$req->input('_matricula');
+
+    $dato4=$req->input('_tributo');
+
+    $dato5=$req->input('_importe');
+
+
+
+    
+
+    $dato6=$req->input('_fecha');
+
+
+
+    $periodo = date('m/Y',strtotime(str_replace('-','/',$dato6)));
+
+
+    $modeldet= ModelDetalle::create([
+
+        'idmodelo' =>       999999,
+        'tributo' =>        $dato4,//dentro del ente de tamño 4 de longitud es el tributo...pueden ser varios
+        'periodo' =>        $periodo,//mes y anio del dia elegido por el que lo intiman...pueden ser varios
+        'tipo_modelo' =>    $dato2,
+        'texto_1' =>        "",
+        'texto_2' =>        "",
+        'texto_3' =>        "",
+        'texto_4' =>        "",
+        'texto_5' =>        "",
+        'importe' =>        $dato5,
+        'estado_mdetalle' => 'guardado',
+        'matricula_inscripcion' => $dato3,
+
+
+
+
+
+
+    ]);
+
+        $mode=$dato2;
+        $cuitt=$dato;
+        $id_tablass=999;
+
+
+
+    $modelos_det= ModelDetalle::where('idmodelo','=',999999)->where('estado_mdetalle','=','guardado')->get();
+
+    return view('imtim_1',compact('modelos_det','mode','cuitt','id_tablass'));
+
+
+
+
+}
 
 
 

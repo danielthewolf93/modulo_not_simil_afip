@@ -53,6 +53,7 @@ public function save_model(Request $req)
 		'dia_referenc' => 	$req->model_fecha_eleg,
 		'dia_mod' => 		$req->model_fecha_creac,
 		'matricula' => 		$req->model_cuit_matr,
+		'tipo_modelo' =>    $req->model_mode
 
 
 
@@ -74,6 +75,7 @@ public function save_model(Request $req)
 		'texto_5' => 		$req->texto5,
 		'importe' => 		$req->importe,
 		'estado_mdetalle' => 'guardado',
+		'matricula_inscripcion' => $req->model_cuit_matr,
 
 
 
@@ -96,7 +98,12 @@ if (isset($modeldet)) {
 	
 	//return back();
 
-	 return view('intim');
+	 //return view('intim');
+	 //
+	 
+
+	 return redirect('/intim')->withInput();
+
 
 	//volver al mismo modelo
 

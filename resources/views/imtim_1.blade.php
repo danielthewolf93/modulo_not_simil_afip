@@ -18,8 +18,8 @@
 											
 											<p><strong> Modelo Elegido : </strong> {{ $mode }}</p>
 											
-											<p><strong> Cuit :</strong>{{ $cuit }}</p>
-<br>	ID:{{ $id_tabla }}
+											<p><strong> Cuit :</strong>{{ $cuitt }}</p>
+<br>	ID:{{ $id_tablass }}
 
 									<label class="form-group">Matricula</label>
 									<div class="form-group">

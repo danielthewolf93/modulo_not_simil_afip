@@ -99,6 +99,8 @@
                        <li><a href="{{ url('/register') }}">Registrar</a></li> 
                                     
                     @else
+                        
+                        <li><a href="#">Seguimiento de Notificaciones</a> </li>
 
                          <li><a href="home">Enviar Mensaje</a></li>
 

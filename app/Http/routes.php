@@ -178,7 +178,7 @@ Route::get('/visualizacionconts','VisualisConController@baul')->name('baul');
 
 //Rutas del modelo
 
-Route::get('/model_save','ModelIntimController@save_model')->name('save_model');
+Route::post('/model_save','ModelIntimController@save_model')->name('save_model');
 
 
 
@@ -216,6 +216,7 @@ Route::get('/lista_modelos/{id_mod}','LModelosController@delete_not')->name('del
 
 
 //Generar pdf
+
 Route::get('/lista_modelos/modelo/{id_modelo}'
     ,'LModelosController@visualizar_pdf_mod')->name('visualizar_modelo');
 
@@ -228,3 +229,7 @@ Route::post('/intimls','IntimController@agregarcuit')->name('cuit_ruta');
 
 
 Route::post('/intim','IntimController@agregartribut')->name('agregar_tribut');
+
+
+
+Route::post('/intim/intimsas','IntimController@masuno_serv')->name('masuno_serv');

@@ -71,7 +71,7 @@
       	<th>Fecha</th>
         <th>Tema</th>
         <th>Despacho</th>
-        <th>Contribuyente</th>
+        
         
       </tr>
     </thead>
@@ -194,7 +194,7 @@ return  '';
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->tema_notif }}</td>
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->notif_despac }}</td> 
 
-        <td class="{{ activeMenu($notif->tipo_notific) }}">Juan Perez</td>
+        
 
         
         
