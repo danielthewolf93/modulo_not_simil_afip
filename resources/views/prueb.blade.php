@@ -85,7 +85,24 @@
 			
 	
 									<input type="hidden" name="fecha_creac" value="{{  date('Y-m-d') }}">
+
 									<input type="hidden" name="importe_tributo" value="">
+
+
+									<div id="importe" style="display: none;">
+										
+
+									<label>Importe</label>	<br>
+
+								$<input type="text" name="import" id="import"  maxlength="7" ><br><br>
+
+
+
+
+
+
+									</div>
+
 
 
 
@@ -161,6 +178,41 @@
     </div>
 </div>
 
+
+<script type="text/javascript">
+	
+
+
+function controlarmod()
+{
+
+	div21=document.getElementById('modeloform').value;
+
+	
+
+
+	if (div21==2) {
+
+		 div2=document.getElementById('importe');
+    	 div2.style.display = '';
+
+	}
+
+	else
+
+	{
+		div2=document.getElementById('importe');
+    	 div2.style.display = 'none';
+	}
+		
+	
+
+}
+
+
+
+
+</script>
 
 
 @endsection
