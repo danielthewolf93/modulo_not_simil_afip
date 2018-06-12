@@ -131,13 +131,6 @@
 
 	@endforeach
 
-<tr> 
-	    <th>000000012412</th>
-	    <th>04/2018 </th>
-	    <th>5454</th>
-	    <th>$1879</th>
-	    <th><a href="" class="btn btn-danger" >X</a></th>
-    </tr>
 
 
     </thead>
