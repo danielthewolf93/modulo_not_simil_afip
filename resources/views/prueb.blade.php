@@ -151,7 +151,7 @@
 	    <th>{{ $mod_det->matricula_inscripcion }}</th>
 	    <th>{{ $mod_det->periodo }}</th>
 	    <th>{{ $mod_det->tributo }}</th>
-	    <th>{{ $mod_det->importe }}</th>
+	    <th>${{ $mod_det->importe }}</th>
 	    
 
 	   <th> <a href="{{ route('delete_modedeta',[$mod_det->id_mdetalles]) }}" class="btn btn-danger" >X</a></th>
