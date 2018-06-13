@@ -14,6 +14,8 @@ use PDF;
 
 use App;
 
+
+
 use App\Modelos;
 
 use App\ModelTipo;
@@ -381,6 +383,34 @@ public function delete_not($id_notific)
 
 
 }
+
+
+public function delete_modedeta($id)
+{
+
+
+  $mod_det= ModelDetalle::where('id_mdetalles', '=', $id)->delete();
+
+  //ModelDetalle::destroy($id);
+
+ // ModelDetalle::where('id_mdetalles','=',$id)->update(['estado_mdetalle' => 'baja']);
+
+
+ // $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'=','guardado')->get();
+
+ 
+    
+
+
+return;
+
+
+}
+
+
+
+
+
 
 
 public function traerpdf($id_notific)

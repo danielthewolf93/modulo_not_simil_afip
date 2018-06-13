@@ -87,7 +87,7 @@
 
 
 			</div>
-			<a href="{{ route('intim') }}" class="btn btn-primary">Volver</a>
+			<a href="{{ route('prueb') }}" class="btn btn-primary">Volver</a>
 
 		</div>
 

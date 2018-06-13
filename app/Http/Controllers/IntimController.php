@@ -323,6 +323,7 @@ public function p_agregar(Request $req)
         //agregamos detalles_modelos_del_modelo_que_est
         //
     
+    $importe_tributo= 0;
 
     $fecha= Input::get('fecha_hoy');
 
@@ -364,10 +365,10 @@ public function p_agregar(Request $req)
 
 
 
-         $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'=','guardado')->get();
+         $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'!=','baja')->get();
 
 
-          return view('prueb',compact('modeloIntDet','model','cuitcon','id_tabla'));
+          return view('prueb',compact('modeloIntDet','model','cuitcon','id_tabla','modeldet'));
 
     }
 

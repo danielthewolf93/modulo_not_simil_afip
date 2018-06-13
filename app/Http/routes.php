@@ -33,7 +33,23 @@ Route::get('/visualizacioncont/mensaje/{id_mensaje}/cuit/{id_recept}'
 
 
 
+
+
+
+
+
+
+
+
 Route::get('/visualizacioncont/{id_notific}','VisualisConController@delete_not')->name('delete_not');
+
+
+
+Route::get('/intimacion/pruebass/{id?}','VisualisConController@delete_modedeta')->name('delete_modedeta');
+
+
+
+
 
 
 Route::get('C:/wamp/www/prueba3/public/storage/{id_notific}','VisualisConController@traerpdf')->name('pdf_get');
@@ -240,6 +256,15 @@ Route::post('intim/masdeuno','IntimController@mas')->name('mas');
 
 
 Route::get('intimacion/prueba','IntimController@prueba')->name('prueb');
+
+
+//si traemos el id del modelo y visualizamos sus modelos detalles podemos terminar con esto.
+//
+//
+
+
+
+
 
 
 Route::post('intimacion/pruebas','IntimController@p_agregar')->name('prueb_agreg');
