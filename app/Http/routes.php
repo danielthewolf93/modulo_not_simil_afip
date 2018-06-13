@@ -268,3 +268,8 @@ Route::get('intimacion/prueba','IntimController@prueba')->name('prueb');
 
 
 Route::post('intimacion/pruebas','IntimController@p_agregar')->name('prueb_agreg');
+
+
+
+
+Route::get('/seguimiento_notificaciones','SeguimientoNotifController@index')->name('seguimiento_notif');

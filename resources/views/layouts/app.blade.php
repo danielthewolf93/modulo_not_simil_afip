@@ -100,7 +100,7 @@
                                     
                     @else
                         
-                        <li><a href="#">Seguimiento de Notificaciones</a> </li>
+                        <li><a href="{{ route('seguimiento_notif') }}">Seguimiento de Notificaciones</a> </li>
 
                          <li><a href="{{ route('home')}}">Enviar Mensaje</a></li>
 
