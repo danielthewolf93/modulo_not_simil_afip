@@ -66,9 +66,7 @@
 									<div class="form-group">
 										<select name="matricula" id="matricula">
 											
-											<option value="1">Matricula1</option>
-											<option value="2">Matricula2</option>
-											<option value="3">Matricula3</option>
+											
 										</select>
 									</div>
 									

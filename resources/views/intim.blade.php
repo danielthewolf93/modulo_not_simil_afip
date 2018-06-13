@@ -85,11 +85,11 @@
 
 									<input type="submit" name="envio" class="btn btn-primary " value="Generar Modelo" >
 								
-			
+									
 								
 
 
-									<a  class="btn btn-success" onclick="masuno()">+1</a>
+									<a  class="btn btn-success" onclick="masuno()">+133</a>
 
 
 									<a href="{{ route('masuno_serv') }}" class="btn btn-success">+1serv</a>
@@ -281,7 +281,7 @@ function masuno()
 
 
 	
-	$('#most').attr("style.display ", "");
+	$('#most').attr("style.display", "");
 
 
 
@@ -311,7 +311,7 @@ function masuno()
 			method: "POST",
 			success:function(data){
 
-					// document.getElementById('auxcuit').value = $('#cuit').val();
+					document.getElementById('auxcuit').value = $('#cuit').val();
 
        
 

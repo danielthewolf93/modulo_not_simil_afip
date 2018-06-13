@@ -102,7 +102,7 @@
                         
                         <li><a href="#">Seguimiento de Notificaciones</a> </li>
 
-                         <li><a href="home">Enviar Mensaje</a></li>
+                         <li><a href="{{ route('home')}}">Enviar Mensaje</a></li>
 
                          <li><a href="{{ route('intim')}}">Enviar Intimaci&oacute;n</a></li>
                                                         
