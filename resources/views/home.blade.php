@@ -45,6 +45,9 @@
 
                                 </div>
 
+
+                               
+
                                 <div class="form-group">
                                     
                                     <label for="tema_not">Motivo del Mensaje</label>
@@ -111,6 +114,63 @@
         </div>
     </div>
 </div>
+
+
+
+<script type="text/javascript">
+    
+function autocompletar() {
+
+
+    var min_length = 1; // variable length
+    var cuit = $('#buscaruse').val();//obtener el nombre y/o termino de busqeuda
+    if (cuit.length >= min_length) {
+        $.ajax({
+
+            
+            url: "{{ route('cuit_ruta')}}",
+            data: "cuit="+cuit+"&_token={{ csrf_token()}}",
+            dataType: "json",
+            method: "POST",
+            success:function(data){
+
+                     document.getElementById('auxcuit').value = $('#cuit').val();
+
+
+                    $('#matricula').empty();
+
+
+              
+            
+                
+
+                  $('#matricula')
+                 .append($("<option></option>")
+                 .attr("value",data[i].pad_nomenclatura)
+                 .text(data[i].pad_nomenclatura));
+
+             }
+
+
+                
+            
+
+        });
+    } else {
+        $('#lista').hide();
+    }
+}
+
+
+
+
+
+</script>
+
+
+
+
+</script>
 
 
 @endsection
