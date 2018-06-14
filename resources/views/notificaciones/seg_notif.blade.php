@@ -26,7 +26,7 @@
 		<input type="search" name="busqueda" placeholder="..."><i class="glyphicon glyphicon-search"></i></input>
 
 		<br> <br>
-		<table class="table">
+		<table class="table table-hover table-condensed " id="table_id">
 			<tr>
 				<th>Fecha Envio</th>
 				<th>Descripcion Movimiento </th>
@@ -68,9 +68,18 @@
 
 
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#table_id').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "scripts/server_processing.php"
+    } );
+} );
 
 
-
+</script>
 
 
 

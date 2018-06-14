@@ -21,8 +21,7 @@ class SeguimientoNotifController extends Controller
 
 
 
-		$notificac_hist = Notificaciones::where('id_personal','=',auth()->id())->where('notif_estado','!=','baja')->where('id_recep','!=',99999999
-)->get();
+		$notificac_hist = Notificaciones::where('id_personal','=',auth()->id())->where('notif_estado','!=','baja')->where('id_recep','!=',99999999)->get();
 
 		return view('notificaciones.seg_notif',compact('notificac_hist'));
 

@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.17/js/jquery.dataTables.js"></script>
+   <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.17/css/jquery.dataTables.css">
+
 
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -142,7 +146,11 @@
     <!--fijar control en javascript.
 
     -->
+       
+
     <script src="../../js/validateforms.js"></script>
+
+ 
     
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
