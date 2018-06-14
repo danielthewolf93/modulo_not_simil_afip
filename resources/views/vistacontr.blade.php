@@ -32,6 +32,30 @@
 <h3>&nbsp&nbsp <i class="glyphicon glyphicon-inbox"> </i> <a href="{{ route('baul') }}"> Archivados  </a>     <a href="{{ route('baul')}}"><span class="badge">{{ count($notifborradas)  }}</span></a>  </h3> 
 <h3>&nbsp&nbsp&nbspCuit 20-37462532-3</h3>
 <br>
+<h3>Novedades</h3>
+
+<table class="table table-hover table-condensed " id="table_id">
+      
+  
+        <tr>
+        <td>*Novedad 1</td>
+        </tr>
+        <tr>
+        <td>*Novedad 2</td>
+        </tr>
+        <tr>
+        <td>*Novedad 3</td>
+        </tr>
+        <tr>
+        <td>*Novedad 4</td>
+        </tr>
+       
+    
+        
+     
+     
+</table>
+
 <br>
 
 

@@ -16,14 +16,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 
-
+	<div class="container">
+		<input type="search" name="busqueda" placeholder="..."><i class="glyphicon glyphicon-search"></i></input>
+	</div>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
 
 
-		<input type="search" name="busqueda" placeholder="..."><i class="glyphicon glyphicon-search"></i></input>
+		
 
 		<br> <br>
 		<table class="table table-hover table-condensed " id="table_id">
