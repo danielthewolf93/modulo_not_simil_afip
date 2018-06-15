@@ -94,172 +94,7 @@ public function baul()
 
 }
 
-public function cuerpo_msj($id_mensaje,$id_recept)
-{
 
-
-	
-	
-	//controlamos que el id del contrib == id del mensaje q quiere entrar sino sale un error
-	//
-	//controlar que el id del mensaje conrresponda con el id del mensaje del contrib
-	//
-	//Luego de eso traer todos los datos del mensaje desde la base de datos....
-	
-/*
-	$inputs=Input::all();
-	$escritor_id = $inputs['id];
-
-	if ($req->id_contrib==auth()->id()) {
-		# code...
-	}
-	
-	tambien debo guardar un registro del movimiento de lo que estoy haciendo ademas de poder hacer
-	un update para actualizar el campo updated_at y tambien notif_estado a leido una vez que se acceda y cada vez que se acceda actualizar todo pero guardar registro de todo en notificaciones_movimiento.
-	*/
-
-
-	$inputs=Input::all();
-
-	//$mensaje= $req['id_notific'];
-
-
-	$notificaciones = Notificaciones::where('id_notific','=',$id_mensaje)->get();
-
-
-	// $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->get();
-	
-/*
-	 Notificaciones::update([
-
-	 		'id_notific' => $request->id_notif,
-            'tipo_notific'  =>    $request->tipo_not,
-            'notif_estado'  =>   'leido',
-            'texto_notific' =>    $request->body,
-            'adjunto'  => 'vacio',
-            'id_personal' => auth()->id(),
-            'id_recep' =>   $request->recipient_id,
-            'notif_despac' => 'COBRANZA RENTAS CAT.',
-            'tema_notif' => $request->tema_not,
-
-            
-
-        ]);
-			
-
-*/		
-        foreach ($notificaciones as $not) {
-        	
-        }
-
-        if ($not->notif_estado=='activo') {
-
-        	
-      	$affectedRows = Notificaciones::where('id_notific','=',$id_mensaje)->update(['notif_estado' => 'leido']);
-
-
-          $modeldet= movimientos_cont::create([
-
-           'mov_descripcion' => 'Mensaje leìdo',
-           'id_notificac' => $id_mensaje,
-
-
-            ]);
-
-
-        }
-
-
-
-
-
-
-
-      $notificacionesnleidas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','activo')->get();
-
-
-
-
-     // where('name', '=', $name)->where("pass", '=', $pass)->
-     // 
-     // 
-
-       if ($not->adjunto > 1) {
-
-     	//aca pasariamos los datos del modelo si existe ...para generar el pdf
-     	
-       	$modeloInt= Modelos::where('id','=',$not->adjunto)->get();
-
-
-       	//ver si hace falta guardar los detalles es decir en vez de hacer la baja logica aplicar una fisica ...
-
-       	$modeloIntDet= ModelDetalle::where('idmodelo','=',$not->adjunto)->where("estado_mdetalle",'=','guardado')->get();
-
-
-        foreach ($modeloInt as $mdtipo) {
-          
-          $tip_mod = $mdtipo->tipo_modelo;
-
-        }
-
-        $modeltip= ModelTipo::where('id_tipo_model','=',$tip_mod)->get();
-
-
-     	return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesleidas','modeloInt','modeloIntDet','modeltip'));
-     }
-
-
-
-
-
-
-      return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesnleidas'));
-
-    //  return view('vistamensaje',compact('id_mensaje','notifs'));
-
-
-    //	return view('home',compact('users'));
-
-// ver id mensaje buscar en base de datos traer los datos del mensaje junto con el tema de la notificacion si incluye o no archivo 
-// adjunto....
-// 
-// 
-/*	$contrib= $inputs['id_recept'];
-
-	$mensaje= $inputs['id_notif'];
-
-
-*/
-
-/*
-
-	 Notificaciones::update([
-
-	 		'id_notific' => $request->id_notif,
-            'tipo_notific'  =>    $request->tipo_not,
-            'notif_estado'  =>   'leido',
-            'texto_notific' =>    $request->body,
-            'adjunto'  => 'vacio',
-            'id_personal' => auth()->id(),
-            'id_recep' =>   $request->recipient_id,
-            'notif_despac' => 'COBRANZA RENTAS CAT.',
-            'tema_notif' => $request->tema_not,
-
-            
-
-        ]);
-
-
-
-*/
-
-
-        
-
-
-	
-
-}
 
 
 
@@ -322,7 +157,7 @@ public function imprimir_msj($id_modelo)
     'cuit' =>  $cuitc,
     'mov_descripcion' => 'Modelo intimacion descargado',
     'id_notificac' => $id_noti,
-
+ 
 
   ]);
 
@@ -349,6 +184,204 @@ public function imprimir_msj($id_modelo)
 
         
 }
+
+
+
+
+
+
+
+
+public function cuerpo_msj($id_mensaje,$id_recept)
+{
+
+
+  
+  
+  //controlamos que el id del contrib == id del mensaje q quiere entrar sino sale un error
+  //
+  //controlar que el id del mensaje conrresponda con el id del mensaje del contrib
+  //
+  //Luego de eso traer todos los datos del mensaje desde la base de datos....
+  
+/*
+  $inputs=Input::all();
+  $escritor_id = $inputs['id];
+
+  if ($req->id_contrib==auth()->id()) {
+    # code...
+  }
+  
+  tambien debo guardar un registro del movimiento de lo que estoy haciendo ademas de poder hacer
+  un update para actualizar el campo updated_at y tambien notif_estado a leido una vez que se acceda y cada vez que se acceda actualizar todo pero guardar registro de todo en notificaciones_movimiento.
+  */
+
+
+  $inputs=Input::all();
+
+  //$mensaje= $req['id_notific'];
+
+
+  $notificaciones = Notificaciones::where('id_notific','=',$id_mensaje)->get();
+
+
+  // $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->get();
+  
+/*
+   Notificaciones::update([
+
+      'id_notific' => $request->id_notif,
+            'tipo_notific'  =>    $request->tipo_not,
+            'notif_estado'  =>   'leido',
+            'texto_notific' =>    $request->body,
+            'adjunto'  => 'vacio',
+            'id_personal' => auth()->id(),
+            'id_recep' =>   $request->recipient_id,
+            'notif_despac' => 'COBRANZA RENTAS CAT.',
+            'tema_notif' => $request->tema_not,
+
+            
+
+        ]);
+      
+
+*/    
+        foreach ($notificaciones as $not) {
+          
+        }
+
+        if ($not->notif_estado=='activo') {
+
+          
+        $affectedRows = Notificaciones::where('id_notific','=',$id_mensaje)->update(['notif_estado' => 'leido']);
+
+
+          $modeldet= movimientos_cont::create([
+
+           'mov_descripcion' => 'Mensaje leìdo',
+           'id_notificac' => $id_mensaje,
+           'cuit' =>  $cuitc,
+
+            ]);
+
+
+        }
+
+
+
+
+
+
+
+      $notificacionesnleidas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','activo')->get();
+
+
+
+
+     // where('name', '=', $name)->where("pass", '=', $pass)->
+     // 
+     // 
+
+       if ($not->adjunto > 1) {
+
+      //aca pasariamos los datos del modelo si existe ...para generar el pdf
+      
+        $modeloInt= Modelos::where('id','=',$not->adjunto)->get();
+
+
+        //ver si hace falta guardar los detalles es decir en vez de hacer la baja logica aplicar una fisica ...
+
+        $modeloIntDet= ModelDetalle::where('idmodelo','=',$not->adjunto)->where("estado_mdetalle",'=','guardado')->get();
+
+
+        foreach ($modeloInt as $mdtipo) {
+          
+          $tip_mod = $mdtipo->tipo_modelo;
+
+        }
+
+        $modeltip= ModelTipo::where('id_tipo_model','=',$tip_mod)->get();
+
+
+      return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesleidas','modeloInt','modeloIntDet','modeltip'));
+     }
+
+
+
+
+
+
+      return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesnleidas'));
+
+    //  return view('vistamensaje',compact('id_mensaje','notifs'));
+
+
+    //  return view('home',compact('users'));
+
+// ver id mensaje buscar en base de datos traer los datos del mensaje junto con el tema de la notificacion si incluye o no archivo 
+// adjunto....
+// 
+// 
+/*  $contrib= $inputs['id_recept'];
+
+  $mensaje= $inputs['id_notif'];
+
+
+*/
+
+/*
+
+   Notificaciones::update([
+
+      'id_notific' => $request->id_notif,
+            'tipo_notific'  =>    $request->tipo_not,
+            'notif_estado'  =>   'leido',
+            'texto_notific' =>    $request->body,
+            'adjunto'  => 'vacio',
+            'id_personal' => auth()->id(),
+            'id_recep' =>   $request->recipient_id,
+            'notif_despac' => 'COBRANZA RENTAS CAT.',
+            'tema_notif' => $request->tema_not,
+
+            
+
+        ]);
+
+
+
+*/
+
+
+        
+
+
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
