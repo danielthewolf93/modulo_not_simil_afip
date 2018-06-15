@@ -203,7 +203,8 @@ return  '';
 
 
         
-    <tr>
+    <tr id="fila_{{ $notif->id_notific }}" onMouseOver="ResaltarFila('fila_{{ $notif->id_notific }}');" onMouseOut="RestablecerFila('fila_{{ $notif->id_notific }}')" onClick="CrearEnlace('{{ route('msj_notif',[$notif->id_notific,Auth::user()->id])}}');">
+       
         <td><i &nbsp class="{{ controlLectura($notif->notif_estado) }}" ></i></td>
         <td><i &nbsp class="{{ controlAdjunto($notif->adjunto) }}" ></i></td>
         <td class="{{ activeMenu($notif->tipo_notific) }}" >{{$notif->created_at }}</td>
@@ -211,6 +212,7 @@ return  '';
         <td class="{{ activeMenu($notif->tipo_notific) }}">{{ $notif->notif_despac }}</td> 
 
         
+
 
         
         
@@ -238,6 +240,34 @@ return  '';
 
 </div>
 
+
+
+
+
+<tr id="fila_<? echo $variable ?>" onMouseOver="ResaltarFila('fila_<? echo $variable ?>');" onMouseOut="RestablecerFila('fila_<? echo $variable ?>')" onClick="CrearEnlace('http://www.google.com');">
+
+
+
+
+
+<script  type="text/javascript">
+
+// RESALTAR LAS FILAS AL PASAR EL MOUSE
+function ResaltarFila(id_fila) {
+    document.getElementById(id_fila).style.backgroundColor = '#C0C0C0';
+}
+ 
+// RESTABLECER EL FONDO DE LAS FILAS AL QUITAR EL FOCO
+function RestablecerFila(id_fila) {
+    document.getElementById(id_fila).style.backgroundColor = '#FFFFFF';
+}
+ 
+// CONVERTIR LAS FILAS EN LINKS
+function CrearEnlace(url) {
+    location.href=url;
+}
+
+</script>
 
 	
 @endif
