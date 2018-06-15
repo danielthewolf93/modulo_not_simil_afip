@@ -34,7 +34,7 @@
 <br>
 <h3>Novedades</h3>
 
-
+ 
 
       @foreach($novedades as $nov)
   

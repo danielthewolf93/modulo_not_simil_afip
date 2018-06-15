@@ -86,11 +86,13 @@ public function baul()
 
 	  $nombre= "Avisos Archivados";
 
+    $novedades = novedades::where('fecha_hasta','>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
+
 	 // $modelosIntimac = Modelos::where('cuit_contrib','=',20374625323)->where('estado','=','enviado')->get();
 
 
 
- return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas'));
+ return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas','novedades'));
 
 }
 
@@ -303,6 +305,7 @@ public function cuerpo_msj($id_mensaje,$id_recept)
         $modeltip= ModelTipo::where('id_tipo_model','=',$tip_mod)->get();
 
 
+
       return view('vistamensaje',compact('id_mensaje','notificaciones','notificacionesleidas','modeloInt','modeloIntDet','modeltip'));
      }
 
@@ -358,26 +361,6 @@ public function cuerpo_msj($id_mensaje,$id_recept)
   
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
