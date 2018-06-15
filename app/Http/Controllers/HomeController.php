@@ -10,6 +10,8 @@ use App\Message;
 
 use App\Notificaciones;
 
+use App\novedades;
+
 use Illuminate\Support\Facades\Input;
 
 use Illuminate\Database\Eloquent\Collection;
@@ -137,6 +139,70 @@ class HomeController extends Controller
         //return $request->all();
         
     }
+
+
+
+
+public function storenov(Request $request)
+{
+  
+
+
+    $rules = [
+        
+        'body' => 'required|min:10|max:100',
+        //controlar fecha hasta sea mayor a la fecha de seleccion sino controlar con javascript.
+        'fecha_hasta' => 'required'
+         ];
+        
+
+//mensajes personalizados para controles
+
+        $novedades = [
+        'body.required' => 'Agrega texto al campo.',
+        'body.max' =>'Texto mayor al permitido :max caracteres.',
+        'fecha_hasta.required' => 'Agrega fecha',
+        'body_min.' => 'Agrega mayor longitud de texto.'
+];
+ 
+        $this->validate($request, $rules, $novedades);
+          
+
+        $fecha_hoy = date('Y-m-d');
+
+
+        novedades::create([
+
+            'fecha_desde' => $fecha_hoy,
+            'fecha_hasta' => $request->fecha_hasta,
+            'texto' => $request->body,
+            'tipo_tema_novedad' => $request->tipo_tema,
+            'id_personal' => auth()->id(),
+
+        ]);
+
+
+        return back()->with('flash','Tu novedad fue enviada');
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

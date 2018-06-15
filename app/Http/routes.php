@@ -22,6 +22,8 @@ Route::auth();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/messages', 'HomeController@store')->name('messages.store');
 
+Route::post('/messages2','HomeController@storenov')->name('novedades.store');
+
 
 //ver esto id_mensaje_ id_recept y controlar si el id_recept es igual al id auth ... si es asi pase sino volver y dar un msj de 
 //error

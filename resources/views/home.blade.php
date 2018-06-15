@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Enviar mensaje</div>
+                <div class="panel-heading">Enviar Mensaje</div>
 
 
 
@@ -102,7 +102,7 @@
                                 </div>
                             -->
 
-
+                                
                                 <div class="form-group">
                                 <button class="btn btn-primary " class="form-control" >Enviar</button>
                                 </div>
@@ -115,6 +115,60 @@
     </div>
 </div>
 
+                 <div class="container">
+                    <div class="row">
+                       <div class="col-md-8 col-md-offset-2">
+                           <div class="panel panel-default">
+                                <div class="panel-heading">Enviar Novedad</div>
+                                    <div class="panel-body">
+
+
+                                 <form method="POST" action="{{ route('novedades.store')}}" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                 
+
+                                
+
+                                     <div class="form-group">
+                                    
+                                            <label for="tipo_desp">Tema</label>
+                                            <select class="form-control" name="tipo_tema"> 
+                                            
+                                                <option value="Nuevos">Nuevos</option>
+                                                <option value="Cambios">Cambios</option>
+                                                <option value="Bajas">Bajas</option>
+
+                                            
+                                            </select>
+                                    </div>
+
+
+
+
+
+                                         <div class="form-group">
+                                            <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <label for="tipo_desp">Fecha Hasta</label>
+                                    
+                                            <input type="date" name="fecha_hasta" id="fecha_hasta">
+                                        </div>
+
+                                    
+                                        <div class="form-group">
+                                            <button class="btn btn-primary " class="form-control" >Enviar</button>
+                                        </div>
+
+
+                                 </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
 
 
 <script type="text/javascript">

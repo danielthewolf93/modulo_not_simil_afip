@@ -34,27 +34,19 @@
 <br>
 <h3>Novedades</h3>
 
-<table class="table table-hover table-condensed " id="table_id">
-      
+
+
+      @foreach($novedades as $nov)
   
-        <tr>
-        <td>*Novedad 1</td>
-        </tr>
-        <tr>
-        <td>*Novedad 2</td>
-        </tr>
-        <tr>
-        <td>*Novedad 3</td>
-        </tr>
-        <tr>
-        <td>*Novedad 4</td>
-        </tr>
-       
+
+      
+    *<bold>{{ $nov->texto }}<br></bold>   
+     
     
         
+     @endforeach
      
-     
-</table>
+
 
 <br>
 

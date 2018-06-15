@@ -14,7 +14,7 @@ use PDF;
 
 use App;
 
-
+use App\novedades;
 
 use App\Modelos;
 
@@ -52,7 +52,11 @@ public function index()
 
 	  $notifborradas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
 
-      return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas'));
+
+    $novedades = novedades::where('fecha_hasta','>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
+
+
+    return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas','novedades'));
 
 
 
