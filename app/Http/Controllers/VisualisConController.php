@@ -399,9 +399,10 @@ public function delete_not($id_notific)
 
 	 $nombre = "Notificaciones";
 
+       $novedades = novedades::where('fecha_hasta','>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
 
 
-  return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','notifborradas','nombre'));
+  return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','notifborradas','nombre','novedades'));
 
 
 
