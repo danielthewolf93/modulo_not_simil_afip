@@ -26,9 +26,12 @@ use App\movimientos_cont;
 
 use Illuminate\Support\Facades\Input;
 
+date_default_timezone_set('America/Argentina/Catamarca');
+
 class VisualisConController extends Controller
 {
     
+
 
 public function index()
 {

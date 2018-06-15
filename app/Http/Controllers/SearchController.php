@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+date_default_timezone_set('America/Argentina/Catamarca');
+
 
 class SearchController extends Controller
 {

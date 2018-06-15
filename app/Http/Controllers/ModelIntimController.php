@@ -14,6 +14,7 @@ use App\Modelos;
 
 use Illuminate\Support\Facades\Input;
 
+date_default_timezone_set('America/Argentina/Catamarca');
 
 
 class ModelIntimController extends Controller

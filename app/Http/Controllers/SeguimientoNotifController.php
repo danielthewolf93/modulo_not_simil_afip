@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Notificaciones;
 
+date_default_timezone_set('America/Argentina/Catamarca');
+
 
 class SeguimientoNotifController extends Controller
 {

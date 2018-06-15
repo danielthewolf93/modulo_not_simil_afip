@@ -22,9 +22,12 @@ use PDF;
 
 use App;
 
+date_default_timezone_set('America/Argentina/Catamarca');
+
 class LModelosController extends Controller
 {
     
+
 
 	public function index()
 	{

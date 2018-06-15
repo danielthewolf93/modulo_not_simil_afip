@@ -6,8 +6,11 @@ use App\Http\Requests;
 
 use Illuminate\Http\Request;
 
+date_default_timezone_set('America/Argentina/Catamarca');
+
 class StoreController extends Controller
 {
+
     
     public function index()
     {

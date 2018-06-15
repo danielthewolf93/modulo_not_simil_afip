@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Input;
 
 use Illuminate\Database\Eloquent\Collection;
 
+date_default_timezone_set('America/Argentina/Catamarca');
+
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *

@@ -24,7 +24,7 @@ use App\Modelos;
 
 use App\ModelTipo;
 
-
+date_default_timezone_set('America/Argentina/Catamarca');
 
 
 
