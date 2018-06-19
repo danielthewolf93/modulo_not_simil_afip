@@ -160,7 +160,7 @@
      if ($adj > 1) {
       //controlamos modelos enviados
        
-       return 'glyphicon glyphicon-user';
+       return 'glyphicon glyphicon-exclamation-sign';
      }
 
      if ($adj == 'si') {

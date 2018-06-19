@@ -166,7 +166,7 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
 
 
 
-   <a href="{{ route('imprimir_msj',[$mode->id]) }}" class="btn btn-success" >Imprimir</a> 
+   <a href="{{ route('imprimir_msj',[$mode->id]) }}" class="btn btn-success" ><i class="glyphicon glyphicon-print"></i> Imprimir</a> 
 
    <br>
 
