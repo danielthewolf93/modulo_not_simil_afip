@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Argentina/Catamarca',
 
     /*
     |--------------------------------------------------------------------------
@@ -161,6 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
        
 
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
 
 
@@ -208,6 +209,9 @@ return [
         //imprimir pdf
         'PDF' => Barryvdh\DomPDF\ServiceProvider::class,
         'Datatables' => yajra\Datatables\Datatables::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+
+
 
 
     ],

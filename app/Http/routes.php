@@ -11,10 +11,12 @@
 |
 */
 
+Route::get('/','HomeController@index2');
+/*
 Route::get('/', function () {
     return view('welcome');
 });
-
+*/
 Route::auth();
 
 
@@ -141,6 +143,9 @@ Route::post('/intimsss','IntimController@agreg2')->name('intimsss');
 
 Route::get('/lista_modelos','LModelosController@index')->name('lista_modelos');
 
+//Enviar Modelos al Contribuyente
+Route::get('/lista_modelos{id_modelo}','LModelosController@enviarmodel')->name('envio_modelos');
+
 
 //Almacenar los documentos 
 Route::get('/formulario','StoreController@index')->name('formul');
@@ -260,6 +265,21 @@ Route::post('intim/masdeuno','IntimController@mas')->name('mas');
 Route::get('intimacion/prueba','IntimController@prueba')->name('prueb');
 
 
+
+Route::get('/tabla',function(){
+
+
+
+Session::flash('warning','Mensaje Nuevo');
+
+
+return view('pruebaloca');
+
+});
+
+
+Route::get('/pruebalo','SeguimientoNotifController@prueba')->name('toast');
+
 //si traemos el id del modelo y visualizamos sus modelos detalles podemos terminar con esto.
 //
 //
@@ -279,3 +299,10 @@ Route::get('/seguimiento_notificaciones','SeguimientoNotifController@index')->na
 
 Route::get('/seg_notif','SeguimientoNotifController@prueba')->name('seguimiento_notif2');
 
+
+
+
+Route::get('/pruebatabla','SeguimientoNotifController@tabla')->name('tabla_seguimiento');
+
+
+Route::get('/seguimiento_notif','SeguimientoNotifController@tabla_notif')->name('tabla_notif');

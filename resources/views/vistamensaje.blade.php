@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 @section('content')
 
@@ -20,28 +20,39 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-
-
-<br>
-
-<p>  Para: {{ Auth::user()->name }}    ( CUIT   {{ Auth::user()->id }} )</p>				ID MENSAJE:{{ $id_mensaje }}
+    <div class="panel panel-body">
 
 
 
 
+<div class="row">
+<div class="col-xs-8">
+  
+
+<h5>  Para: {{ Auth::user()->name }}    ( CUIT   {{ Auth::user()->id }} )</h5>				
+</div>
+
+<div class="col-xs-4">
+ID MENSAJE:{{ $id_mensaje }}
+</div>
+
+</div>
 
 
 
 
 @foreach ($notificaciones as $notif)
-        
-    <h2>{{$notif->tema_notif}}</h2>
+      
+    <h2 style="text-align:center;">{{$notif->tema_notif}}</h2>
+   
 
-    <p>{{ ($notif->texto_notific) }}</p>
+   
+  <div  class="alert alert-success">  <p style="text-align:center;">{{ ($notif->texto_notific) }}</p> </div>
+    
        
 @if($notif->adjunto=='vacio')
 
-<p>No hay datos adjuntos</p>
+<p style="text-align:center;">No hay datos adjuntos</p>
 
 @endif
 
@@ -73,7 +84,7 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
 
 
 
-<h1 style="position: center">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Modelo {{ $mode->tipo_modelo }}</h1>
+<h1 style="text-align:center;">Modelo {{ $mode->tipo_modelo }}</h1>
     <label for="">Fecha :</label>
        {{ $mode->dia_referenc }}
       <br>
@@ -175,8 +186,9 @@ style="width:600px; height:500px;" frameborder="0"></iframe>
 <br>
 
 
+
+
+
 <a href="{{ URL::previous() }}" class="btn btn-primary">Volver</a>
-
-
 @endsection
 

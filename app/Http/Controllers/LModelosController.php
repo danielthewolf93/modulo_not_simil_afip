@@ -22,7 +22,7 @@ use PDF;
 
 use App;
 
-date_default_timezone_set('America/Argentina/Catamarca');
+//date_default_timezone_set('America/Argentina/Catamarca');
 
 class LModelosController extends Controller
 {
@@ -172,14 +172,44 @@ class LModelosController extends Controller
         //para solo descargar
         //        return $pdf->stream('invoice');
 
-     	
+
+    }
 
 
+    public function enviarmodel($id_mod)
+    {
+            
+
+            Modelos::where('id','=',$id_mod)->update(['estado' => 'enviado']);
 
 
+            Notificaciones::create([
+           
+            'tipo_notific'  =>    'importante',
+            'notif_estado'  =>   'activo',
+            'texto_notific' =>    'Archivo Recibido',
+            'adjunto'  => $id_mod,
+            'id_personal' => auth()->id(),
+            'id_recep' =>   2,
+            'notif_despac' => 'Rentas SFC',
+            'tema_notif' => 'Notificar',
+
+            
+
+        ]);
+
+            $modelos = Modelos::where('id_personal','=',auth()->id())->where('estado','=','guardado')->get();
 
 
+            //ver como traer id de la tabla modelos...
+            //se repite el campo en la tabla modelos_detalles seria algo : modelos.id as idmodelo 
 
+
+            $listamodel= Modelos::where('id_personal','=',auth()->id())->where('estado','=','guardado')->get();
+
+            
+            
+            return redirect()->route('lista_modelos')->with('message','Tu modelo fue enviado');
 
 
 

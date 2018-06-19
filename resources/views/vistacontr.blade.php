@@ -1,9 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
 
 
 @section('content')
-
 
 <ul><a href="{{ route('visualcon') }}">Rentas-Notificaciones</a> / Inicio</ul>
 
@@ -16,39 +15,57 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-
+<body onload="setInterval('prueb()',10000)">
 
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-
+            <div class="panel panel-default ">
+<div class="panel-body">
 
 <br>
+      <div class="col-sm-6">
+        
 
-<h1><i &nbsp class="fa fa-address-card" ></i>&nbspJuan Perez</h1> 
+<h1><i sp class="fa fa-address-card" ></i>Juan Perez</h1> 
+
+<h3>Cuit 20-37462532-3</h3>
+</div>
+
+<div class="media-body">
+  
+
+
 <h3>&nbsp&nbsp <i class="glyphicon glyphicon-bell"> </i> <a href="{{ route('visualcon') }}"> Avisos </a>  </h3>
-<h3>&nbsp&nbsp  Sin leer <a href="{{ route('visualcon') }}"> <span class="badge">{{ count($notificacionesnleidas)  }}</span></a>  |  Leidos  <a href="{{ route('visualcon') }}"><span class="badge">{{ count($notifleid)  }}</span>       </a>  </h3>
+<h3>&nbsp&nbsp  Sin leer <a href="{{ route('visualcon') }}" onclick="setInterval('prueb()',10000)"> <span class="badge">{{ count($notificacionesnleidas)  }}</span></a>  |  Leidos  <a href="{{ route('visualcon') }}"><span class="badge">{{ count($notifleid)  }}</span>       </a>  </h3>
 <h3>&nbsp&nbsp <i class="glyphicon glyphicon-inbox"> </i> <a href="{{ route('baul') }}"> Archivados  </a>     <a href="{{ route('baul')}}"><span class="badge">{{ count($notifborradas)  }}</span></a>  </h3> 
-<h3>&nbsp&nbsp&nbspCuit 20-37462532-3</h3>
-<br>
-<h3>Novedades</h3>
+</div>
 
+
+  
+<h3>Novedades</h3>
  
+<ul class="list alert alert-info">
+  
+
+
+
+
 
       @foreach($novedades as $nov)
   
 
-      
-    *<bold>{{ $nov->texto }}<br></bold>   
+     
+    *<strong>{{ $nov->texto }}<br></strong>   
      
     
         
      @endforeach
-     
+
+</ul>  
+</div>
 
 
-<br>
 
 
 			</div>
@@ -73,13 +90,14 @@
 
  @if(count($notificaciones)==0)
 
-
-<p>&nbsp &nbsp No tiene mensajes </p>
+<div class="alert alert-warning">
+<p >&nbsp &nbsp No tiene Nuevas Notificaciones </p>
+<div>
 
 
 @else 
  
-	<table class="table">
+	<table onload="setInterval('location.reload()',15000)" class="table">
     <thead>
       <tr>
         <th></th>
@@ -255,6 +273,7 @@ return  '';
 // RESALTAR LAS FILAS AL PASAR EL MOUSE
 function ResaltarFila(id_fila) {
     document.getElementById(id_fila).style.backgroundColor = '#C0C0C0';
+    document.getElementById(id_fila).style.cursor = 'pointer';
 }
  
 // RESTABLECER EL FONDO DE LAS FILAS AL QUITAR EL FOCO
@@ -269,7 +288,34 @@ function CrearEnlace(url) {
 
 </script>
 
-	
+
+<script >
+          
+    function prueb() {
+     
+     if ({{ count($notificacionesnleidas)  }}>0) {
+
+
+        toastr.options.progressBar = true;
+       toastr.info('Tienes {{ count($notificacionesnleidas)  }} notificaciones nuevas','{{ Auth::user()->name }}',{timeout: 5000});
+
+     }
+     
+
+    
+
+       
+       
+  }
+
+
+</script>
+
+
+
+
+</body>
+
 @endif
 
 

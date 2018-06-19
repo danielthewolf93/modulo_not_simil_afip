@@ -21,7 +21,9 @@
 	<h3>{{Auth::user()->name}}</h3>
 <br>
 	
-
+@if (Session::has('message'))
+                   <div class="alert alert-info">{{ Session::get('message') }}</div>
+                @endif
  
 
 @if ( count($listamodel)==0 )  
@@ -33,7 +35,7 @@
 	<table class="table">
     <thead>
       <tr>
-        <th>Identificador</th>
+        <th>#</th>
       	<th>Fecha Creacion</th>
       	
         <th>Contribuyente</th>
@@ -46,13 +48,13 @@
       </tr>
 
 
-	
+	@php($i=1)
 
 @foreach($listamodel as $model)
 
 	<tr>
 		
-		<th>{{ $model->id }}</th>	
+		<th>{{ $i++ }}</th>	
 		<th>{{ $model->created_at }}</th>
 		<th>{{ $model->cuit_contrib }}</th>
 		<th>{{ $model->tipo_modelo }} </th>
@@ -61,9 +63,9 @@
 		
 		<th> <a href="{{ route('visualizar_modelo',[$model->id]) }}" class="btn btn-primary" target="_blank">Ver</a> </th>
 
-		<th><a href="" class="btn btn-warning">Editar</a></th>
+		
 
-		<th><a href="" class="btn btn-success">Enviar</a></th>
+		<th><a href="{{ route('envio_modelos',[$model->id]) }}" class="btn btn-success">Enviar</a></th>
 
 		<th><a href="{{ route('delete_not_list',[$model->id]) }}" class="btn btn-danger">X</a></th>
 		
@@ -81,6 +83,8 @@
 		</tbody>
   	</table>
 
+	
+
 
 
 
@@ -88,12 +92,14 @@
 
 			</div>
 			<a href="{{ route('prueb') }}" class="btn btn-primary">Volver</a>
-
+			
 		</div>
 
 	</div>
 
 </div>
+
+
 
 @endif
 

@@ -10,6 +10,8 @@ use App\User;
 
 use App\rm_padron6;
 
+use Session;
+
 use App\Message;
 
 use App\ModelDetalle;
@@ -24,7 +26,6 @@ use App\Modelos;
 
 use App\ModelTipo;
 
-date_default_timezone_set('America/Argentina/Catamarca');
 
 
 
@@ -339,6 +340,14 @@ public function p_agregar(Request $req)
     $cuitcon = $req->cuit_m_det;
     $model=$req->mod_det;
     $id_tabla= $va;
+
+
+     $this->validate($req, [
+        'tributo' => 'required|min:1',
+        'matricula' => 'required',
+    ]);
+
+
 
 
     $modeldet= ModelDetalle::create([

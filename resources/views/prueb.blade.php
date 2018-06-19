@@ -64,7 +64,7 @@
 
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
-										<select name="matricula" id="matricula">
+										<select name="matricula" id="matricula" required>
 											
 											
 										</select>
@@ -152,7 +152,7 @@
 	    <th>${{ $mod_det->importe }}</th>
 	    
 
-	   <th> <a href="{{ route('delete_modedeta',[$mod_det->id_mdetalles]) }}" class="btn btn-danger" >X</a></th>
+	   <th> <a href="{{ route('delete_modedeta',[$mod_det->id_mdetalles]) }}" class="btn btn-danger"  id="boton2" >X</a></th>
 
     </tr>
 
@@ -187,6 +187,15 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+{{--http://vcomputadoras.com/usa-ajax-para-refrescar-un-tag-div/ ver refrescar  --}}
+
 
 
 <script type="text/javascript">

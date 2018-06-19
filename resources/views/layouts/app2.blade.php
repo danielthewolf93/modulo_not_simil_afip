@@ -103,20 +103,20 @@
                                     
                     @else
                         
-                        <li><a href="{{ route('seguimiento_notif') }}">Seguimiento de Notificaciones</a> </li>
+                      
 
-                         <li><a href="{{ route('home')}}">Enviar Mensaje</a></li>
+                       
 
-                         <li><a href="{{ route('intim')}}">Enviar Intimaci&oacute;n</a></li>
+                      
                                                         
 
 
 
     {{--<li><a href="#">Notificaciones<span class="badge">{{count($notificacionesnleidas) }}</span></a></li>--}}  
-                             
+                             <li><a href="{{ route('visualcon') }}">Notificaciones<span class="badge"></span></a></li>
 
 
-                            <li><a href="{{  route('formul') }}">Enviar documento</a></li>
+                          
                         <li class="dropdown">
 
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

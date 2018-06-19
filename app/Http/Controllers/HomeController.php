@@ -12,11 +12,12 @@ use App\Notificaciones;
 
 use App\novedades;
 
+
+
 use Illuminate\Support\Facades\Input;
 
 use Illuminate\Database\Eloquent\Collection;
 
-date_default_timezone_set('America/Argentina/Catamarca');
 
 class HomeController extends Controller
 {
@@ -50,9 +51,38 @@ class HomeController extends Controller
     public function index2()
     {
 
-        $users2 = User::where()->get();
+        if (auth()->id()==1) {
+            
+            
+             $users = User::where('id','!=',auth()->id())->get();
 
-        return view('home2',compact('users2'));
+            return view('home',compact('users'));
+        }
+
+        else 
+
+
+             $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->orderBy('created_at','DSC')->get();
+
+    //  $notificaciones = Notificaciones::where('id_recep','=',auth()->id())->get();
+
+
+
+     $notifleid = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'!=','baja')->where("notif_estado",'=','leido')->get();
+
+      $notificacionesnleidas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','activo')->get();
+
+      $nombre = "Notificaciones";
+
+      $notifborradas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
+
+
+    $novedades = novedades::where('fecha_hasta','>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
+
+
+    return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas','novedades'));
+
+        
     }
 
 
@@ -127,8 +157,9 @@ class HomeController extends Controller
 
 
              //return view('home');
+             
 
-         return back()->with('flash','Tu mensaje fue enviado');
+         return back()->with('message','Tu mensaje fue enviado');
 
          //return $request->session()->flash('status', 'Task was successful!');
 
@@ -185,7 +216,7 @@ public function storenov(Request $request)
         ]);
 
 
-        return back()->with('flash','Tu novedad fue enviada');
+        return back()->with('notificac','Tu novedad fue enviada');
 
 
 

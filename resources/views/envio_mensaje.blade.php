@@ -38,7 +38,16 @@
                                 </div>
 
 
-                               
+                                <div class="form-group">
+                                  
+
+                                  <input type="text" name="buscaruse" id="buscaruse">
+
+
+
+
+
+                                </div>
 
                                
 

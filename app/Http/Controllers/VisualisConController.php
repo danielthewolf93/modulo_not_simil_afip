@@ -26,7 +26,6 @@ use App\movimientos_cont;
 
 use Illuminate\Support\Facades\Input;
 
-date_default_timezone_set('America/Argentina/Catamarca');
 
 class VisualisConController extends Controller
 {
@@ -156,7 +155,7 @@ public function imprimir_msj($id_modelo)
 
     $modeldet= movimientos_cont::create([
 
-    'cuit' =>  $cuitc,
+    'cuit' =>  auth()->id(),
     'mov_descripcion' => 'Modelo intimacion descargado',
     'id_notificac' => $id_noti,
  
@@ -262,7 +261,7 @@ public function cuerpo_msj($id_mensaje,$id_recept)
 
            'mov_descripcion' => 'Mensaje leìdo',
            'id_notificac' => $id_mensaje,
-           'cuit' =>  $cuitc,
+           'cuit' =>  $id_recept,
 
             ]);
 
@@ -413,7 +412,37 @@ public function delete_modedeta($id)
 {
 
 
-  $mod_det= ModelDetalle::where('id_mdetalles', '=', $id)->delete();
+
+    
+
+
+  $modeldet=ModelDetalle::where('id_mdetalles','=',$id)->get();
+
+
+  foreach ($modeldet as $md ) {
+    
+
+    $id_tabla = $md->idmodelo;
+   
+  }
+
+  $modl = Modelos::where('id','=',$id_tabla)->get();
+
+
+  foreach ($modl as $modls ) {
+    
+
+    
+
+    $model = $modls->tipo_modelo;
+    $cuitcon = $modls->cuit_contrib;
+  }
+
+  $modeldet="";
+
+   ModelDetalle::where('id_mdetalles', '=', $id)->delete();
+
+
 
   //ModelDetalle::destroy($id);
 
@@ -422,11 +451,16 @@ public function delete_modedeta($id)
 
  // $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'=','guardado')->get();
 
- 
-    
 
 
-return;
+
+         $modeloIntDet= ModelDetalle::where('idmodelo','=',$id_tabla)->where("estado_mdetalle",'!=','baja')->get();
+
+
+          
+
+
+        return view('prueb',compact('modeloIntDet','id_tabla','model','cuitcon'));
 
 
 }

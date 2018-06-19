@@ -8,6 +8,8 @@
                 <div class="panel-heading">Enviar Mensaje</div>
 
 
+@include('sweetalert::alert')
+
 
 
                 @if (Session::has('message'))
@@ -122,6 +124,10 @@
                                 <div class="panel-heading">Enviar Novedad</div>
                                     <div class="panel-body">
 
+                                       @if (Session::has('notificac'))
+                                       <div class="alert alert-info">{{ Session::get('notificac') }}</div>
+                                       @endif
+
 
                                  <form method="POST" action="{{ route('novedades.store')}}" enctype="multipart/form-data">
                                     {{ csrf_field() }}
@@ -225,6 +231,9 @@ function autocompletar() {
 
 
 </script>
+
+
+<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 
 
 @endsection
