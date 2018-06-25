@@ -39,7 +39,7 @@ class StoreController extends Controller
 
 		$nom=$public_path.'/storage/';
 
-		return "archivo guardado en ".$nom;
+		return "archivo guardado en ".$nom.$nombre;
 
 	}
 
