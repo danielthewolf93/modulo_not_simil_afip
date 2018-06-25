@@ -253,10 +253,6 @@ return  '';
   
  
 
-
-
-
-      
     </tbody>
   </table>
 
@@ -269,14 +265,7 @@ return  '';
 </div>
 
 
-
-
-
 <tr id="fila_<? echo $variable ?>" onMouseOver="ResaltarFila('fila_<? echo $variable ?>');" onMouseOut="RestablecerFila('fila_<? echo $variable ?>')" onClick="CrearEnlace('http://www.google.com');">
-
-
-
-
 
 <script  type="text/javascript">
 
