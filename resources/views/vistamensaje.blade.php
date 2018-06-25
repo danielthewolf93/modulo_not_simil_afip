@@ -60,13 +60,15 @@ ID MENSAJE:{{ $id_mensaje }}
 
 <p>Ventana</p>
 
-@php($lin="https://drive.google.com/open?id=1moArpQHRBClHn8YWqqUTFbHGhIDk5MPU")
+@php($link="http://www.educoas.org/portal/bdigital/contenido/valzacchi/ValzacchiCapitulo-4New.pdf")
 
 
 <div  style="text-align:center">
 
-<iframe src="http://docs.google.com/gview?url={{ $lin }}&embedded=true" 
+<iframe src="http://docs.google.com/viewerng/viewer?url={{ $link }}&embedded=true" 
 style="width:600px; height:500px; margin:0px" class="panel panel-default" frameborder="0"></iframe>
+
+
 
 </div>
 
