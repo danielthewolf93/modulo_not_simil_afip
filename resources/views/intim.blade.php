@@ -36,9 +36,11 @@
 										<input type="text" name="cuit" id="cuit" placeholder="cuit_contribuyente" maxlength="11" onkeyup="autocompletar()">
 									</div>
 									<ul id="lista" ></ul>
+									<ul id="nomb_contr" >Juan Perez</ul>
 
 									<input type="hidden" name="auxcuit" id="auxcuit" value="">
-
+									
+									
 				
 									<label class="form-group">Matricula</label>
 									<div class="form-group">
@@ -60,10 +62,6 @@
 									<label>Importe</label>	<br>
 
 								$<input type="text" name="import" id="import"  maxlength="7" ><br><br>
-
-
-
-
 
 
 									</div>
@@ -194,6 +192,8 @@ function autocompletar() {
 
 
 					$('#matricula').empty();
+
+
 
 
 				$.each(data, function(i, item) {
