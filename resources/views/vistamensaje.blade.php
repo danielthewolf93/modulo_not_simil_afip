@@ -109,13 +109,8 @@ style="width:600px; height:500px; margin:0px" class="panel panel-default" frameb
 
   <div class="contener">
   
-
-
       <h3>Detalle</h3>
       
-
-      
-
         <table class="table">
     <thead>
       <tr>
@@ -124,12 +119,7 @@ style="width:600px; height:500px; margin:0px" class="panel panel-default" frameb
         <th>Periodo</th>
         <th>Tributo</th>
         <th>Monto</th>
-        
 
-        
-   
-
-        
       </tr>
 
 
