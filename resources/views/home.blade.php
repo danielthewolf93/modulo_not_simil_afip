@@ -155,12 +155,21 @@
                                          <div class="form-group">
                                             <textarea class="form-control" placeholder="Ingrese aqui tu mensaje" name="body"></textarea>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="fecha_desde">Fecha Desde</label>
+                                    
+                                            <input type="date" name="fecha_desde" id="fecha_desde">
+                                        </div>
+
                                     
                                         <div class="form-group">
-                                            <label for="tipo_desp">Fecha Hasta</label>
+                                            <label for="fecha_hasta">Fecha Hasta</label>
                                     
                                             <input type="date" name="fecha_hasta" id="fecha_hasta">
                                         </div>
+
+
 
                                     
                                         <div class="form-group">

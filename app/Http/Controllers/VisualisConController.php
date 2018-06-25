@@ -55,7 +55,7 @@ public function index()
 	  $notifborradas = Notificaciones::where('id_recep','=',auth()->id())->where("notif_estado",'=','baja')->orderBy('created_at','DSC')->get();
 
 
-    $novedades = novedades::where('fecha_hasta','>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
+    $novedades = novedades::where('fecha_desde','<=',date('Y-m-d'))->where("fecha_hasta",'>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
 
 
     return view('vistacontr',compact('notificaciones','notificacionesnleidas','notifleid','nombre','notifborradas','novedades'));
@@ -85,7 +85,7 @@ public function baul()
 
 	  $nombre= "Avisos Archivados";
 
-    $novedades = novedades::where('fecha_hasta','>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
+    $novedades = novedades::where('fecha_desde','<=',date('Y-m-d'))->where("fecha_hasta",'>=',date('Y-m-d'))->orderBy('fecha_desde','DSC')->get();
 
 	 // $modelosIntimac = Modelos::where('cuit_contrib','=',20374625323)->where('estado','=','enviado')->get();
 

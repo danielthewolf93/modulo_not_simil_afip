@@ -207,7 +207,7 @@ public function storenov(Request $request)
 
         novedades::create([
 
-            'fecha_desde' => $fecha_hoy,
+            'fecha_desde' => $request->fecha_desde,
             'fecha_hasta' => $request->fecha_hasta,
             'texto' => $request->body,
             'tipo_tema_novedad' => $request->tipo_tema,
