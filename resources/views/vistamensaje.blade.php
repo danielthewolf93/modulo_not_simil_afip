@@ -60,12 +60,12 @@ ID MENSAJE:{{ $id_mensaje }}
 
 <p>Ventana</p>
 
-@php($lin="url=https://drive.google.com/open?id=1grExAYv9kYrfJFcFPBclZaln_9PMAy5l")
+@php($lin="https://drive.google.com/open?id=1moArpQHRBClHn8YWqqUTFbHGhIDk5MPU")
 
 
 <div  style="text-align:center">
 
-<iframe src="http://docs.google.com/gview?{{ $lin }}&embedded=true" 
+<iframe src="http://docs.google.com/gview?url={{ $lin }}&embedded=true" 
 style="width:600px; height:500px; margin:0px" class="panel panel-default" frameborder="0"></iframe>
 
 </div>
