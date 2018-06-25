@@ -42,9 +42,13 @@
 </div>
 
 
-  
+
 <h3>Novedades</h3>
- 
+
+@if(count($novedades)==0)
+<p>*No hay nuevas novedades.</p>
+@else
+
 <ul class="list alert alert-info">
   
 
@@ -62,7 +66,11 @@
         
      @endforeach
 
-</ul>  
+</ul>
+
+
+@endif
+
 </div>
 
 
@@ -75,6 +83,8 @@
 	</div>
 
 </div>
+
+
 
 
 
