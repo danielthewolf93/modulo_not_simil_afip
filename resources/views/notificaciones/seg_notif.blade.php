@@ -49,7 +49,7 @@
 		<table id="example" class="table table-striped table-bordered" style="width:100%">
 	    <thead>
 	         <tr>
-	         	<th>Id</th>
+	         	<th>Idasd</th>
 	            <th>Fecha Envio</th>
 	            <th>Detalle</th>
 	            <th>Contribuyente</th>
